@@ -1,15 +1,15 @@
 import React from 'react'
 
-import LeftSidebar from "../components/LeftSidebar"
-import RightSidebar from "../components/RightSidebar"
-import Content from "../components/Content"
+import LeftAsideB from "../components/leftAside"
+import RightSidebar from "../components/rightAside"
+import Content from "../components/content"
 
 const Home = ()=> {
     return(
 
         <div>
             <main className="main-container">
-                <LeftSidebar/>
+                <LeftAsideB/>
                 <Content/>
                 <RightSidebar/>
             </main>
