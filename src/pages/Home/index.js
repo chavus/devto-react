@@ -2,7 +2,7 @@ import React from 'react'
 
 import LeftSidebar from "../components/LeftSidebar"
 import RightSidebar from "../components/RightSidebar"
-import Content from "../components/Content"
+import Content from "../../components/Content"
 
 const Home = ()=> {
     return(
