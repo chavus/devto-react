@@ -1,19 +1,26 @@
 import React from 'react'
+import {
+    Row
+} from 'reactstrap'
 
 import LeftAsideB from "../../components/leftAside"
 import RightSidebar from "../../components/rightAside"
 import Content from "../../components/content"
+import Footer from '../../components/Footer'
 
 const Home = ()=> {
     return(
 
-        <div>
-            <main className="main-container">
-                <LeftAsideB/>
-                <Content/>
-                <RightSidebar/>
+       <>
+            <main className="main-container d-flex">
+                
+                    <LeftAsideB/>
+                    <Content/>
+                    <RightSidebar/>
+                
             </main>
-        </div>
+           <Footer/>
+        </>   
     )
 
 }

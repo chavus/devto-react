@@ -1,8 +1,9 @@
 import React from 'react'
+import './styles.scss'
 
 const  RightSidebar = ()=> {
     return(
-        <>
+        
         <aside className="d-none d-xl-block col-xl-3">
 			<div className="card div-card mt-2">
 				<img className="img-aside-right" src="img/photos/changelog.png" alt="changelog"/>
@@ -60,7 +61,7 @@ const  RightSidebar = ()=> {
 					</ul>
 			</div>
 	    </aside>
-        </>
+        
     )
 
 }

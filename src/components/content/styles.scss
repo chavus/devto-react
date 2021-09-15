@@ -1,0 +1,64 @@
+$hover-tabs-color: #3b49df;
+$main-black: #202428;
+$transparent-blue-bg: rgba(59, 73, 223, 0.1);
+$main-blue:#323ebe;
+$radius: 5px;
+$hover-tabs-color: #3b49df;
+
+.cards-section{
+    .cards-navigation{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        align-items: center;
+        .subtitle{
+            font-size: 1.25rem;
+            margin-bottom: 0px;
+            font-weight: 700;
+        }
+        .title{
+            display:flex;
+        }
+
+    }
+    .nav.nav-tabs{
+        border-bottom: none;
+       
+        .nav-link{
+            position: relative;
+            border-radius: 5px;
+            overflow: hidden;
+            color: $main-black;
+            color: #202428;
+            padding: 8px 12px;
+            &.active{
+                background-color: transparent;
+                border: none;
+                font-weight: 500;
+                &:after{
+                    content: " ";
+                    position: absolute;
+                    background: $main-blue;
+                    height: 3px;
+                    bottom: 0px;
+                    left: .75rem;
+                    right: .75rem;
+                    
+                }
+                &:hover{
+                    &:after{
+                        left: 0rem;
+                        right: 0rem;
+                        border-radius: 0 0 $radius $radius;
+                        transition: all 0.2s linear;
+                    }
+                }
+            }
+            &:hover{
+                color: $hover-tabs-color;
+                background-color: $transparent-blue-bg;
+            }
+
+        }
+    }
+}

@@ -3,6 +3,9 @@ import {
   Link,
 } from "react-router-dom";
 import api from '../../lib/api'
+import Cards from '../Cards'
+import './styles.scss'
+
 // import ArticleComponent from "./articles/Articles";
 // import ArticleStructure from "./articles/ArticleStructure";
 
@@ -17,36 +20,40 @@ const Content = () => {
     }, [])
 
   return (
-    <main className="main-content">
-      <header>
-        <h1>Posts</h1>
-        <nav>
-          <Link to="/#">Feed</Link>
-          <Link to="/#">Week</Link>
-          <Link to="/#">Month</Link>
-          <Link to="/#">Infinity</Link>
-          <Link to="/#">Latest</Link>
-        </nav>
-        <select id="dropdown-select" className="dropdown">
-          <option value="Feed" defaultValue>
-            Feed
-          </option>
+    <section className="col-12 col-md-8 col-xl-6 cards-section">
+     
+          <nav className= 'cards-navigation'> 
+              <div>
+                  <h1 className='subtitle'>Posts</h1>
+              </div>
+              <div>
+                  <Link to="/#">Feed</Link>
+                  <Link to="/#">Week</Link>
+                  <Link to="/#">Month</Link>
+                  <Link to="/#">Infinity</Link>
+                  <Link to="/#">Latest</Link>
+              </div>
+          </nav>
+          { /*<select id="dropdown-select" className="dropdown">
+              <option value="Feed" defaultValue>
+                Feed
+              </option>
 
-          <option value="Week">Week</option>
-          <option value="Month">Month</option>
-          <option value="Year">Feed</option>
-          <option value="Infinity">Infinity</option>
-        </select>
-      </header>
+              <option value="Week">Week</option>
+              <option value="Month">Month</option>
+              <option value="Year">Feed</option>
+              <option value="Infinity">Infinity</option>
+          </select> */}
+    
       <div className="articles">
         {/* {articles &&
           articles.map((article, id) => {
             return <ArticleComponent key={id} data={article} />;
           })} */}
-          <h1>aqui van los artículos</h1>
+          <Cards/>
         {/* {!articles && [1, 2, 3, 4, 5].map((a) => <ArticleStructure key={a} />)} */}
       </div>
-    </main>
+    </section>
   );
 };
 
