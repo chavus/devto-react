@@ -11,13 +11,14 @@ import './styles.scss'
 
 
 const Content = () => {
-  const [articles, setArticles] = useState(null);
+  const [posts, setPosts] = useState([]);
 
 	useEffect(async () => {
-        const result = await api.getAllArticles()
+        const result = await api.getAllPosts()
         console.log(result)
-        setArticles([...articles, ...result])
-    }, [])
+        setPosts(result)
+       // console.log(result[0].writer._id)
+    }, []) 
 
   return (
     <section className="col-12 col-md-8 col-xl-6 cards-section">
@@ -50,7 +51,13 @@ const Content = () => {
           articles.map((article, id) => {
             return <ArticleComponent key={id} data={article} />;
           })} */}
-          <Cards/>
+          {posts.map((post) => {
+            return ( <Cards
+              postKey = {post.writer._id}
+              postData = {post}
+              />)
+          })}
+
         {/* {!articles && [1, 2, 3, 4, 5].map((a) => <ArticleStructure key={a} />)} */}
       </div>
     </section>
