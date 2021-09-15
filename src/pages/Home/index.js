@@ -1,25 +1,26 @@
 import React from 'react'
+import {
+    Row
+} from 'reactstrap'
 
-<<<<<<< HEAD:src/pages/Home/index.js
-import LeftSidebar from "../components/LeftSidebar"
-import RightSidebar from "../components/RightSidebar"
-import Content from "../../components/Content"
-=======
 import LeftAsideB from "../../components/leftAside"
 import RightSidebar from "../../components/rightAside"
 import Content from "../../components/content"
->>>>>>> main:src/pages/home.js
+import Footer from '../../components/Footer'
 
 const Home = ()=> {
     return(
 
-        <div>
-            <main className="main-container">
-                <LeftAsideB/>
-                <Content/>
-                <RightSidebar/>
+       <>
+            <main className="main-container d-flex">
+                
+                    <LeftAsideB/>
+                    <Content/>
+                    <RightSidebar/>
+                
             </main>
-        </div>
+           <Footer/>
+        </>   
     )
 
 }

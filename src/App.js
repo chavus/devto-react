@@ -11,6 +11,7 @@ import './App.scss';
 //Components imports
 import Navigation from "./components/Navigator"
 
+
 // Pages imports
 import Home from "./pages/Home"
 import CreatePost from './pages/CreatePost'
@@ -27,15 +28,6 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-<<<<<<< HEAD
-          <Route path="/about">
-            <h1>About</h1>
-            </Route>
-          <Route path="/users">
-            <h1>users</h1>
-            </Route>
-          <Route path="/">
-=======
           <Route path="/createPost"> 
             <CreatePost/>
           </Route>
@@ -49,7 +41,6 @@ function App() {
             <Search/>
           </Route>
           <Route path="/"> 
->>>>>>> a45711477be1593b1689495745344b52e0633983
             <Home/>
           </Route>
         </Switch>
