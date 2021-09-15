@@ -1,0 +1,129 @@
+.br-post{
+    border-radius: 15px;
+    border-radius: $radius;
+    overflow: hidden;
+}
+
+.c-header{
+    align-items: center;  
+}
+
+.br-100{
+    border-radius: 100%;
+    width: 32px;
+    height: 32px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.not-b{
+    font-weight: lighter;
+}
+
+
+.c-name{
+    flex-direction: column;
+    justify-content: center;
+    .nickname{
+        font-weight: bolder;
+    }
+}
+
+.custom-a{
+    background-color: darkblue;
+    color: rgb(140, 255, 249);
+    border-radius: 5px;
+}
+
+.h-order{
+    justify-self: flex-start;
+}
+  
+.comment{
+    background-color: white;
+    border: none;
+}
+
+.save{
+    background-color: rgb(203, 216, 223);
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.read{
+    justify-content: space-between;
+    align-items: end;
+    margin-top: 10px;
+}
+
+.post-list{
+    display: flex;
+    align-items: center;
+    /*margin-left: 5px;*/
+    text-decoration: none;
+    /*padding: 5px;*/
+    color: black;
+    padding: 0px;
+    &:hover{
+        color: $main-blue;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+.post-card{
+    .card-body{
+        .c-header{
+            .c-name{
+                p{
+                    margin-bottom: 0px;
+                }
+            }
+            
+        }
+        .card-content{
+            .card-title{
+                font-weight: 700;
+            }
+            .card-post-tags{
+                
+                .custom-a{
+                    padding: 0 8px;
+                    color: rgb(140, 255, 249);
+                }
+            }
+            nav{
+                a{
+                    color: $main-gray;
+                    font-size: 14px;
+                }
+            }
+            .read{
+                font-size: 14px;
+                color: #363d44;
+                font-weight: 700;
+                align-items: center;
+                button{
+                    color: #363d44;
+                    font-weight: 700;
+                }
+                .d-flex{
+                    align-items: center;
+                }
+                .save{
+                    padding: .25rem .5rem;
+                    font-weight: 400;
+                }
+            }
+            
+        }
+    }
+    &.featured-post-card{
+        .card-content{
+            .card-title{
+                font-size: 30px;
+            }
+        }
+    }
+}
