@@ -6,6 +6,21 @@
 }
 .group-btns{
     margin-left: 11px;
+    #apple{
+        background-image: url(../../img/socialnetworks/apple.svg);
+        background-repeat: no-repeat;
+        background-position:26% 50%
+    }
+    #github{
+        background-image: url(../../img/socialnetworks/github.svg);
+        background-repeat: no-repeat;
+        background-position:26% 50%
+    }
+    #twitter{
+        background-image: url(../../img/socialnetworks/twitter.svg);
+        background-repeat: no-repeat;  
+        background-position:26% 50%
+    }
 }
 button{
     width: 520px;
