@@ -1,0 +1,90 @@
+$main-blue:#323ebe;
+$main-black: #202428;
+$main-gray: #64707d;
+
+/*CARD 2ND PAGE RIGHT ASIDE*/
+.post-detail-profile{
+    top:72px;
+    .post-detail-profile-info{
+
+            border-top: 2rem solid $main-black;
+            padding-top: 0px;
+            .card-header{
+                border: none;
+                background: transparent;
+                margin-top: -2rem;
+                display: flex;
+                align-items: flex-end;
+                img{
+                    margin-bottom: 0px;
+                }
+                .card-title{
+                    margin-top: 0px;
+                    display: flex;
+                    align-items: flex-end;
+                    margin-left: .5rem;
+                    margin-bottom: .25rem;
+                }
+
+            }
+        .card-body{
+            .follow-btn{
+                background-color: $main-blue;
+                width: 100%;
+                height: 3em;
+                color: white;
+                font-weight: bold;
+                border-radius: 8px;
+                border: none;
+                padding: .5rem 1rem;
+                height: auto;
+                &:hover{
+                    background-color: darken($main-blue,5%);
+                }
+            }
+            .list-style{
+                list-style-type: none;
+                padding: 0;
+                li{
+                    margin-bottom: .5rem;
+                }
+            }
+            .simon-txt{
+                font-size: .75rem;
+                color: $main-gray;
+            }
+        }
+    }
+}
+
+
+.img-size{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin-bottom: 1em;
+}
+
+
+.laptop-icon{
+    width: 20px;
+    height: 20px;
+}
+
+.card-span{
+    opacity: .40; 
+}
+
+.card-txt{
+    color: gray;
+    font-size: small;
+    font-weight: normal;
+    padding-top: .25em;
+    padding-left: 2em;
+}
+
+
+
+
+
+/* End of Aside Right */
