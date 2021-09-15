@@ -1,8 +1,8 @@
 import React from 'react'
 
-import LeftAsideB from "../components/leftAside"
-import RightSidebar from "../components/rightAside"
-import Content from "../components/content"
+import LeftAsideB from "../../components/leftAside"
+import RightSidebar from "../../components/rightAside"
+import Content from "../../components/content"
 
 const Home = ()=> {
     return(
