@@ -6,6 +6,7 @@ const CardComponent = ()=> {
     return(
 
         <div className="card mt-3 br-post post-card">
+            <img src="https://picsum.photos/540/280" class="card-img-top" alt="..."/>
             <div className="card-body">
                 <div className="d-flex c-header">
                         <img src="images/pics/alfred.jpg" alt="" className="br-100 pad"/>

@@ -11,13 +11,13 @@ import './styles.scss'
 
 
 const Content = () => {
-  const [articles, setArticles] = useState(null);
+  const [posts, setPosts] = useState([]);
 
-	useEffect(async () => {
-        const result = await api.getAllArticles()
+/*	useEffect(async () => {
+        const result = await api.getAllPosts()
         console.log(result)
-        setArticles([...articles, ...result])
-    }, [])
+        setPosts(result)
+    }, []) */
 
   return (
     <section className="col-12 col-md-8 col-xl-6 cards-section">
