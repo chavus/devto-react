@@ -32,7 +32,6 @@ function App() {
           </Route>
           <Route path="/login"> 
              <Login/> 
-             {/* <h1>Hola desde login</h1> */}
           </Route>
           <Route path="/postDetail/:id">
             <PostDetail/> 
