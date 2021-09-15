@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
-import ArticleComponent from "./articles/Article";
-import ArticleStructure from "./articles/ArticleStructure";
+import {
+  Link,
+} from "react-router-dom";
 import api from '../../lib/api'
+// import ArticleComponent from "./articles/Articles";
+// import ArticleStructure from "./articles/ArticleStructure";
+
 
 const Content = () => {
   const [articles, setArticles] = useState(null);
@@ -17,11 +21,11 @@ const Content = () => {
       <header>
         <h1>Posts</h1>
         <nav>
-          <a href="/#">Feed</a>
-          <a href="/#">Week</a>
-          <a href="/#">Month</a>
-          <a href="/#">Infinity</a>
-          <a href="/#">Latest</a>
+          <Link to="/#">Feed</Link>
+          <Link to="/#">Week</Link>
+          <Link to="/#">Month</Link>
+          <Link to="/#">Infinity</Link>
+          <Link to="/#">Latest</Link>
         </nav>
         <select id="dropdown-select" className="dropdown">
           <option value="Feed" defaultValue>
@@ -35,12 +39,12 @@ const Content = () => {
         </select>
       </header>
       <div className="articles">
-        {articles &&
+        {/* {articles &&
           articles.map((article, id) => {
-            return <Article key={id} data={article} />;
-          })}
-
-        {!articles && [1, 2, 3, 4, 5].map((a) => <ArticleStructure key={a} />)}
+            return <ArticleComponent key={id} data={article} />;
+          })} */}
+          <h1>aqui van los artículos</h1>
+        {/* {!articles && [1, 2, 3, 4, 5].map((a) => <ArticleStructure key={a} />)} */}
       </div>
     </main>
   );

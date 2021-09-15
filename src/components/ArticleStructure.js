@@ -1,12 +1,12 @@
 import React from "react";
 
-const ArticleSkeleton = () => {
+const ArticleStructure = () => {
   return (
     <div className="skeleton-wrapper">
       <div className="skeleton-article">
         <div className="skeleton image" />
 
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div d-flex align-items-center>
           <div className="skeleton avatar"></div>
           <div className="skeleton text"></div>
         </div>
@@ -22,4 +22,4 @@ const ArticleSkeleton = () => {
   );
 };
 
-export default ArticleSkeleton;
+export default ArticleStructure;

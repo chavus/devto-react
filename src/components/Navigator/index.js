@@ -34,7 +34,7 @@ const Navigation = ()=> {
 
                 </div>
 
-                <div className={showMenu? "dropdown-menu" : "dropdown-menu-close"}>
+                {/* <div className={showMenu? "dropdown-menu" : "dropdown-menu-close"}>
 
                     <ul>
                         <li onClick={toggle}>
@@ -60,7 +60,7 @@ const Navigation = ()=> {
                         </li>
                     </ul>
 
-                </div>
+                </div> */}
 
             </header>
         </>

@@ -6,7 +6,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 
 dayjs.extend(relativeTime);
 
-const Article = (props) => {
+const Articles = (props) => {
   const {
     title,
     cover_image,
@@ -115,4 +115,4 @@ const Article = (props) => {
   );
 };
 
-export default Article;
+export default Articles;
