@@ -21,7 +21,7 @@ const Content = () => {
     }, []) 
 
   return (
-    <section className="col-12 col-md-8 col-xl-6 cards-section">
+    <section className=" cards-section">
      
           <nav className= 'cards-navigation'> 
               <div>
@@ -47,10 +47,7 @@ const Content = () => {
           </select> */}
     
       <div className="articles">
-        {/* {articles &&
-          articles.map((article, id) => {
-            return <ArticleComponent key={id} data={article} />;
-          })} */}
+
           {posts.map((post) => {
             return ( <Cards
               postKey = {post.writer._id}
@@ -58,7 +55,6 @@ const Content = () => {
               />)
           })}
 
-        {/* {!articles && [1, 2, 3, 4, 5].map((a) => <ArticleStructure key={a} />)} */}
       </div>
     </section>
   );

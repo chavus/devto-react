@@ -2,10 +2,10 @@ import React from 'react'
 import './styles.scss'
 import changelog from '../../img/photos/changelog.png'
 
-const  RightSidebar = ()=> {
+const  RightSidebar = () => {
     return(
         
-        <aside className="d-none d-xl-block col-xl-3">
+        <aside className="d-none d-xl-block">
 			<div className="card div-card mt-2">
 				<img className="img-aside-right" src={changelog} alt="changelog"/>
 				<div className="card-body">

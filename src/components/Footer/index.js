@@ -9,7 +9,7 @@ import twitter from '../../img/socialnetworks/twitter.svg'
 const  Footer = ()=> {
     return(
 
-        <footer className="bg-gray ml-0 mr-0">
+        <footer className="bg-gray ml-0 mr-0 vw-100 navbar-fixed-bottom">
 		<div className="container-sm custom-container d-flex">
 			<div className="row mt-3 ">
 				<nav className="col-12 ">
