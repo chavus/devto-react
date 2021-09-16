@@ -1,11 +1,13 @@
 import React from 'react'
+import './styles.scss'
+import changelog from '../../img/photos/changelog.png'
 
-const  RightSidebar = ()=> {
+const  RightSidebar = () => {
     return(
-        <>
-        <aside className="d-none d-xl-block col-xl-3">
+        
+        <aside className="d-none d-xl-block">
 			<div className="card div-card mt-2">
-				<img className="img-aside-right" src="img/photos/changelog.png" alt="changelog"/>
+				<img className="img-aside-right" src={changelog} alt="changelog"/>
 				<div className="card-body">
 					<p className="">New Forem Changelog Entries!</p>
 					<p className="c-text-color">"Lock Discussions on Posts"</p>
@@ -60,7 +62,7 @@ const  RightSidebar = ()=> {
 					</ul>
 			</div>
 	    </aside>
-        </>
+        
     )
 
 }

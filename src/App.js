@@ -11,6 +11,7 @@ import './App.scss';
 //Components imports
 import Navigation from "./components/Navigator"
 
+
 // Pages imports
 import Home from "./pages/Home"
 import CreatePost from './pages/CreatePost'
