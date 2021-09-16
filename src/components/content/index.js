@@ -48,10 +48,11 @@ const Content = () => {
     
       <div className="articles">
 
-          {posts.map((post) => {
+          {posts.map((post, index) => {
             return ( <Cards
-              postKey = {post.writer._id}
+              postKey = {post._id}
               postData = {post}
+              postIndex = {index}
               />)
           })}
 

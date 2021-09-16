@@ -1,16 +1,18 @@
-import React from 'react'
+import React,{ useState, useEffect } from 'react'
 import './styles.scss'
 import { Link } from 'react-router-dom';
 
 const CardComponent =  (props)=> {
 
-    const { postKey } =  props
+    
+    const { postKey,  postIndex } =  props
     const { comments, coverImage, positiveReactionsCount, readablePublishedDate, readingTimeMinutes, tagsList, title, writer} =  props.postData
 
+    
     return(
 
         <div className="card mt-3 br-post post-card">
-            <img src={coverImage} class="card-img-top" alt="..."/>
+          { postIndex == 0 && <img src={coverImage} class="card-img-top" alt="..."/> }
             <div className="card-body" key={postKey}>
                 <div className="d-flex c-header">
                         <img src="https://picsum.photos/200/300" alt="" className="br-100 pad"/>
