@@ -11,50 +11,6 @@ const  Footer = ()=> {
 
         <footer className="bg-gray ml-0 mr-0 vw-100 navbar-fixed-bottom">
 		<div className="container-sm custom-container d-flex">
-			<div className="row mt-3 ">
-				<nav className="col-12 ">
-					<div className="d-flex flex-wrap justify-content-center">
-						<a href="#" className="post-list">Home</a>
-						<a href="#" className="post-list">listings</a>
-						<a href="#" className="post-list">Podcasts</a>
-						<a href="#" className="post-list">Videos</a>
-						<a href="#" className="post-list">Tags</a>
-						<a href="#" className="post-list">Code of Conduct</a>
-						<a href="#" className="post-list">FAQ</a>
-						<a href="#" className="post-list">DEV Shop</a>
-						<a href="#" className="post-list">Sponsors</a>
-						<a href="#" className="post-list">About</a>
-						<a href="#" className="post-list">Privacy Poacy</a>
-						<a href="#" className="post-list">Terms of use</a>
-						<a href="#" className="post-list">Contact</a>
-						<a href="#" className="post-list"><span>Create Post</span></a>
-					</div>
-
-				</nav>
-			</div>
-
-			<div className="pt-2 pb-2 social-icons"> 
-				<a href="https://twitter.com/thepracticaldev" target="_blank"
-					className="" rel="noopener">
-					<img src={twitter} alt="twitter"/>
-				</a>
-				<a href="https://facebook.com/thepracticaldev" target="_blank">
-					<img src={facebook} alt="facebook"/>
-				</a>
-				<a href="https://github.com/thepracticaldev" target="_blank">
-					<img src={github} alt="github"/>
-				</a>
-				<a href="https://instagram.com/thepracticaldev" target="_blank"
-					className="crayons-link crayons-link--secondary mx-2" rel="noopener">
-					<img src={instagram} alt="instagram"/>
-				</a>
-				<a href="https://twitch.com/thepracticaldev" target="_blank"
-					className="crayons-link crayons-link--secondary mx-2" rel="noopener">
-					<img src={twitch} alt="twitch"/>
-
-				</a>
-			</div>
-			<div className="f-divider pt-1 pb-2"></div>
 			<p className="f-size"><span>DEV Community </span>-A constructive and inclusive social network for software. With you every
 				step
 				of your journey</p>
