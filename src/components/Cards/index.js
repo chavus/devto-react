@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const CardComponent =  (props)=> {
 
     const { postKey } =  props
-    const { comments, content, coverImage, positiveReactionsCount, readablePublishedDate, readingTimeMinutes, tagsList, title, writer} =  props.postData
+    const { comments, coverImage, positiveReactionsCount, readablePublishedDate, readingTimeMinutes, tagsList, title, writer} =  props.postData
 
     return(
 
@@ -13,16 +13,16 @@ const CardComponent =  (props)=> {
             <img src={coverImage} class="card-img-top" alt="..."/>
             <div className="card-body" key={postKey}>
                 <div className="d-flex c-header">
-                        <img src="images/pics/alfred.jpg" alt="" className="br-100 pad"/>
+                        <img src="https://picsum.photos/200/300" alt="" className="br-100 pad"/>
                     <div className="d-flex c-name">
                         <h6 className="nickname mb-0">{writer.userName}</h6>
                         <p>{readablePublishedDate }</p>
                     </div>   
                 </div>
                 <div classNameName="card-content pl-5 pt-2">
-                    <a href="index2.html" classNameName="post-list">
+                    <Link to={`/postDetail/${postKey}`} classNameName="post-list">
                         <h4 classNameName="card-title">{title}</h4>
-                    </a>
+                    </Link>
                     <div className="d-flex h-order">
                         <nav className="">{ 
                           tagsList && tagsList.map(( tag, index ) => {
