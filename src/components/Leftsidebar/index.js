@@ -1,4 +1,5 @@
 import React from 'react'
+import "./_leftsidebar.scss"
 
 const LeftSidebar = ()=> {
     return(
