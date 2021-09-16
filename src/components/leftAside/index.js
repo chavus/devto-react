@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./_leftaside.scss"
 import {
   Link,
 } from "react-router-dom";
@@ -188,7 +189,7 @@ const LeftAsideB = (props) => {
                 <a href="/sponsors"><span><FcLike /></span>Sponsors</a>
               </li>
               <li>
-                <a href="/about"><span><img src="images/icons/about.svg" alt=""/></span>About</a>
+                <a href="/about"><span><img src="images/icons/faq.svg" alt=""/></span>About</a>
               </li>
               <li>
                 <a href="/contact"><span><img src="images/icons/contact.svg" alt=""/></span>Contact</a>
