@@ -23,7 +23,7 @@ import Search from './pages/Search';
 function App() {
   return (
     <Router>
-        <Navigation/>
+        {/* <Navigation/> */}
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
