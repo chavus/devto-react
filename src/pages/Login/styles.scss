@@ -4,6 +4,9 @@
     border: 1px solid lightgrey;
     border-radius: 1%;
 }
+.text-relevant{
+    color: blue;
+}
 .group-btns{
     margin-left: 11px;
     #apple{
@@ -14,7 +17,9 @@
     #github{
         background-image: url(../../img/socialnetworks/github.svg);
         background-repeat: no-repeat;
-        background-position:26% 50%
+        background-position:26% 50%;
+        background-color: rgb(45, 46, 46);
+        
     }
     #twitter{
         background-image: url(../../img/socialnetworks/twitter.svg);
@@ -27,4 +32,8 @@ button{
 }
 .text-here{
     width: 520px;
+}
+
+footer{
+    margin-top: 7vw;
 }

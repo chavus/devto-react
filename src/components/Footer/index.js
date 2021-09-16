@@ -1,10 +1,5 @@
 import React from 'react'
 import './styles.scss'
-import facebook from '../../img/socialnetworks/facebook.svg'
-import github from '../../img/socialnetworks/github.svg'
-import instagram from '../../img/socialnetworks/instagram.svg'
-import twitch from '../../img/socialnetworks/twitch.svg'
-import twitter from '../../img/socialnetworks/twitter.svg'
 
 const  Footer = ()=> {
     return(

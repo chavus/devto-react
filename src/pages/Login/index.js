@@ -1,5 +1,6 @@
 import React from "react";
-
+import sunglasses from '../../img/icons/sunglasses.svg'
+import heart from '../../img/icons/heart.svg'
 import{
     Form,
     FormGroup,
@@ -20,7 +21,7 @@ function Login(){
             <Col xs="12">
                     <div>
                         <h1 className="font-weight-bold text-center">Welcome to DEV Community</h1>
-                        <p className="text-center"><a href="/">DEV Comunity</a>is a community of 693,496 amazing developers</p>
+                        <p className="text-center"><span className="text-relevant">DEV Comunity</span> is a community of 693,496 amazing developers</p>
                     </div>
                     <div className="group-btns d-flex flex-column">
                         <Button id="apple" className="mt-2" type="button" color="dark" size="lg" block>Continue whit Apple</Button>
@@ -44,12 +45,12 @@ function Login(){
                         <label> Remember me</label>
                     </div>
                     <Button className="mt-3" type="button" color="primary" size="lg" block >Continue</Button>
-                    <p className="text-center mt-3"><a href="#">I forgot my password</a></p>
+                    <p className="text-center mt-3"><span className="text-relevant">I forgot my password</span></p>
                 </Form>
             </Col>
                 <div>
                     <div className="mb-5">
-                        <p class="text-center text-muted ">Open Source  • Free Forever</p>
+                        <p class="text-center text-muted ">Open Source <img src={sunglasses} alt="sunglasses"/> • Free Forever <img src={heart} alt="heart"/></p>
                         <p class="text-center text-muted ">We strive for transparency and don't collect excess data.</p>
                     </div>
                 </div>  
