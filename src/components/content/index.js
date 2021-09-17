@@ -12,13 +12,17 @@ import './styles.scss'
 
 const Content = () => {
   const [posts, setPosts] = useState([]);
+  const [filter, setFilter] = useState('')
 
 	useEffect(async () => {
         const result = await api.getAllPosts()
-        console.log(result)
+       
         setPosts(result)
-       // console.log(result[0].writer._id)
+       
     }, []) 
+
+  const 
+   
 
   return (
     <section className = "cards-section">
