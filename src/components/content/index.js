@@ -21,18 +21,18 @@ const Content = () => {
     }, []) 
 
   return (
-    <section className=" cards-section">
+    <section className = "cards-section">
      
-          <nav className= 'cards-navigation'> 
+          <nav className = 'cards-navigation'> 
               <div>
                   <h1 className='subtitle'>Posts</h1>
               </div>
               <div>
-                  <Link to="/#">Feed</Link>
-                  <Link to="/#">Week</Link>
-                  <Link to="/#">Month</Link>
-                  <Link to="/#">Infinity</Link>
-                  <Link to="/#">Latest</Link>
+                  <Link to="/#" className='filters'>Feed</Link>
+                  <Link to="/#" className='filters'>Week</Link>
+                  <Link to="/#" className='filters'>Month</Link>
+                  <Link to="/#" className='filters'>Infinity</Link>
+                  <Link to="/#" className='filters'>Latest</Link>
               </div>
           </nav>
           { /*<select id="dropdown-select" className="dropdown">
@@ -48,7 +48,7 @@ const Content = () => {
     
       <div className="articles">
 
-          {posts.map((post, index) => {
+          { posts.map((post, index) => {
             return ( <Cards
               postKey = {post._id}
               postData = {post}

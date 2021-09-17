@@ -15,7 +15,7 @@ const  Footer = ()=> {
 				<nav className="col-12 ">
 					<div className="d-flex flex-wrap justify-content-center">
 						<a href="#" className="post-list">Home</a>
-						<a href="#" className="post-list">listings</a>
+						<a href="#" className="post-list">Listings</a>
 						<a href="#" className="post-list">Podcasts</a>
 						<a href="#" className="post-list">Videos</a>
 						<a href="#" className="post-list">Tags</a>
