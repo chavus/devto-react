@@ -1,7 +1,5 @@
-import React,{ useState, useEffect } from 'react'
 import './styles.scss'
 import { Link } from 'react-router-dom';
-import { Button } from 'reactstrap';
 
 
 const CardComponent =  (props)=> {
