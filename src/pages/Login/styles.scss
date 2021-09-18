@@ -8,32 +8,50 @@
     color: blue;
 }
 .group-btns{
-    margin-left: 11px;
+
     #apple{
         background-image: url(../../img/socialnetworks/apple.svg);
-        background-repeat: no-repeat;
-        background-position:26% 50%
+        background-repeat: no-repeat; 
+        background-position:13% 50%
     }
     #github{
         background-image: url(../../img/socialnetworks/github.svg);
         background-repeat: no-repeat;
-        background-position:26% 50%;
+        background-position:13% 50%;
         background-color: rgb(45, 46, 46);
         
     }
     #twitter{
         background-image: url(../../img/socialnetworks/twitter.svg);
-        background-repeat: no-repeat;  
-        background-position:26% 50%
+        background-repeat: no-repeat; 
+        background-position:13% 50%; 
+        background-color: #1da1f2;
+        border: #1da1f2 1px;
     }
 }
 button{
-    width: 520px;
+    max-width: 520px;
 }
 .text-here{
-    width: 520px;
+    max-width: 520px;
 }
-
+#continue{
+    width: 100%;
+    background-color: #3b49df;
+}
 footer{
     margin-top: 7vw;
+}
+@media(min-width:768px){
+    .group-btns{
+        #apple{
+            background-position:26% 50%
+        }
+        #github{
+            background-position:26% 50%;
+        }
+        #twitter{
+            background-position:26% 50%;
+        }
+    }
 }
