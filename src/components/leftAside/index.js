@@ -43,7 +43,7 @@ const LeftAsideB = (props) => {
 
       <aside className="leftBar">
 
-      <div className="card">
+      <div className="card card-aside">
           <div className="cardbody">
             <div className="card-text">
               <h5><span>DEV Community</span> is a community of 694,903 amazing developers</h5>
