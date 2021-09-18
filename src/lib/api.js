@@ -77,6 +77,29 @@ export default{
         postCommentsIds.push(commentId)
         this.updatePost(postId, {comments:postCommentsIds}, jwtToken)
         return postCommentsIds
+    },
+    async authenticate(data){
+       
+        let response = await fetch(`${BASE_URL}/auth/login`,{
+            method: "POST",
+            headers:{
+                'Content-Type':'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+        const resJson = await response.json()
+        return resJson
+
+    },
+    async getUserById(id, jwtToken){
+
+        let result = await fetch(`${BASE_URL}/users/${id}`,{
+            headers:{
+                'Authorization': jwtToken
+            }
+        })
+        const resJson = await result.json()
+        return resJson
     }
     
 }

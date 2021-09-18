@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     Link,
-  } from "react-router-dom";
+} from "react-router-dom";
 import "./_navigation.scss"
+import { useLocation } from "react-router-dom"
 
-function Navbar() {
+
+function Navbar(props) {
+    // const [userData, setUserData] = useState(null)
+    const userData = props.userData
+    const location = useLocation()
+
+    useEffect(()=>{
+        console.log(location.pathname)
+    },[])
+
     return (
         <div>
            <header className="fixed-top">
@@ -35,9 +45,12 @@ function Navbar() {
                                     <Link className="search-button" to="/search"><i><img src="/images/icons/search.svg" alt="search"/></i></Link>
                                 </form>
                                 <div className="navbar-right d-flex  align-items-center">
-                                    <button onclick="window.location.href='New.html';"
-                                        className="btn btn-primary btn-create-post d-none d-md-flex">Create
-                                        Post</button>
+                                { userData && 
+                                <>
+                                    <Link to="/createPost">
+                                        <button
+                                            className="btn btn-primary btn-create-post d-none d-md-flex">Create Post</button>
+                                    </Link>
                                     <Link to="/search" class="d-flex d-md-none"><img src="/images/icons/search.svg" alt="search"/></Link>
                                   
                                         <Link className="icons-links" to=""><img src="/images/icons/connect.svg" alt="connect"/></Link>
@@ -46,7 +59,6 @@ function Navbar() {
                                    
 
                                     <div className="nav-item dropdown">
-
                                         <button id="navbarScrollingDropdown"
                                             className="nav-link dropdown-toggle profile-badge"
                                             type="button" data-toggle="dropdown"
@@ -78,8 +90,8 @@ function Navbar() {
                                             </li>
                                             <li><a className="dropdown-item"
                                                     href="#">Dashboard</a></li>
-                                            <li><a className="dropdown-item" href="New.html">Create
-                                                    Post</a></li>
+                                            <li><Link className="dropdown-item" to="/createPost">Create
+                                                    Post</Link></li>
                                             <li><a className="dropdown-item" href="#">Reading
                                                     List </a></li>
                                             <li><a className="dropdown-item"
@@ -91,12 +103,16 @@ function Navbar() {
                                                     Out</a></li>
                                         </ul>
                                     </div>
+                                </>
+                                }
                                     {/* cuando el usr no se ha hecho login */}
+                                    {!userData && 
                                     <div className="login-actions">
                                         <span className="login-button"><Link to="/login">Log in</Link></span>
                                         <span className="create-account-button"><Link to="#">Create account</Link></span>
                                             
                                     </div>
+                                    }
                                 </div>
 
                             </nav>
