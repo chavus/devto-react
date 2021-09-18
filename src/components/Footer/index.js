@@ -6,6 +6,7 @@ const  Footer = ()=> {
 
         <footer className="bg-gray ml-0 mr-0 vw-100 navbar-fixed-bottom">
 		<div className="container-sm custom-container d-flex">
+      
 			<p className="f-size"><span>DEV Community </span>-A constructive and inclusive social network for software. With you every
 				step
 				of your journey</p>

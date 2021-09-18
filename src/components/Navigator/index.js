@@ -61,6 +61,9 @@ function Navbar() {
                                                     src="https://res.cloudinary.com/practicaldev/image/fetch/s--IjCb_ILa--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/647885/81bdd7eb-d4eb-4f9e-94a3-0ce06183465b.png"/>
                                             </span>
                                         </button>
+
+                                        
+
                                         <ul className="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
 
                                             <li>
@@ -87,6 +90,11 @@ function Navbar() {
                                             <li><a className="dropdown-item" href="#">Sign
                                                     Out</a></li>
                                         </ul>
+                                    </div>
+                                    {/* cuando el usr no se ha hecho login */}
+                                    <div className="login-actions">
+                                            <span><Link to="#">Create account</Link></span>
+                                            <span><Link to="/login">Log in</Link></span>
                                     </div>
                                 </div>
 
