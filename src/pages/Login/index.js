@@ -18,8 +18,9 @@ import './styles.scss'
 function Login(){
     return(
         <>
-            <Row className="main-container d-flex">
-            <div className="container bg-light p-3">
+            <div className="supermain-container-login">
+            <Row className="main-container-login d-flex">
+            <div className="container-login bg-light p-3">
             <Col xs='12' >
                     <div>
                         <h1 className="font-weight-bold text-center">Welcome to DEV Community</h1>
@@ -62,6 +63,7 @@ function Login(){
                 </div>  
             </div>
             </Row>
+            </div>
             <Footer/>
         </>
     )
