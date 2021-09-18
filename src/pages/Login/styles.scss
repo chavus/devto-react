@@ -14,18 +14,19 @@
     color: blue;
 }
 .group-btns{
-
+    align-items: center;
     #apple{
         background-image: url(../../img/socialnetworks/apple.svg);
         background-repeat: no-repeat; 
-        background-position:13% 50%
+        background-position:13% 50%;
+        width:100% !important;
     }
     #github{
         background-image: url(../../img/socialnetworks/github.svg);
         background-repeat: no-repeat;
         background-position:13% 50%;
         background-color: rgb(45, 46, 46);
-        
+        width:100% !important;
     }
     #twitter{
         background-image: url(../../img/socialnetworks/twitter.svg);
@@ -33,6 +34,7 @@
         background-position:13% 50%; 
         background-color: #1da1f2;
         border: #1da1f2 1px;
+        width:100% !important;
     }
 }
 button{

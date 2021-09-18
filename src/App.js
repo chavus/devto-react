@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
+  useParams
 } from "react-router-dom";
 
 import './App.scss';
@@ -21,7 +22,9 @@ import Search from './pages/Search';
 
 
 function App() {
+
   return (
+
     <Router>
         <Navigation/>
 
