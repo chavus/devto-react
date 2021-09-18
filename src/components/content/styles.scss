@@ -4,6 +4,7 @@ $transparent-blue-bg: rgba(59, 73, 223, 0.1);
 $main-blue:#323ebe;
 $radius: 5px;
 $hover-tabs-color: #3b49df;
+$reaction-color-light-blue:#26d9ca;
 
 .cards-section{
     .cards-navigation{
@@ -15,6 +16,16 @@ $hover-tabs-color: #3b49df;
             font-size: 1.25rem;
             margin-bottom: 0px;
             font-weight: 700;
+        }
+
+        .filters{
+            &:hover {
+                color: $main-blue;
+               background-color: #dee0f3;
+               border-radius: 5px;
+               transition: all 1s ease;
+               -webkit-transition: all 1s ease;
+            }
         }
         .title{
             display:flex;

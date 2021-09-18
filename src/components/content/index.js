@@ -1,37 +1,50 @@
 import React, { useEffect, useState } from "react";
 import {
-  Link,
-} from "react-router-dom";
+  Button
+} from "reactstrap";
 import api from '../../lib/api'
 import Cards from '../Cards'
 import './styles.scss'
+import moment from 'moment'
 
 // import ArticleComponent from "./articles/Articles";
 // import ArticleStructure from "./articles/ArticleStructure";
 
 
 const Content = () => {
-  const [articles, setArticles] = useState(null);
+
+  const getYear = date => moment(date).year()
+  const getMonth = date => moment(date).month()
+  const getWeek = date => moment(date).isoWeek()
+
+  const currentDate = moment(new Date)
+
+  const [posts, setPosts] = useState([]);
+  const [filter, setFilter] = useState('Feed')
+  const [filteredPost, setFilteredPost] = useState('')
 
 	useEffect(async () => {
-        const result = await api.getAllArticles()
-        console.log(result)
-        setArticles([...articles, ...result])
-    }, [])
+
+        const result = await api.getAllPosts()   
+        setPosts(result)
+       
+    }, []) 
+
+   
 
   return (
-    <section className="col-12 col-md-8 col-xl-6 cards-section">
+    <section className = "cards-section">
      
-          <nav className= 'cards-navigation'> 
+          <nav className = 'cards-navigation'> 
               <div>
                   <h1 className='subtitle'>Posts</h1>
               </div>
               <div>
-                  <Link to="/#">Feed</Link>
-                  <Link to="/#">Week</Link>
-                  <Link to="/#">Month</Link>
-                  <Link to="/#">Infinity</Link>
-                  <Link to="/#">Latest</Link>
+                  <Button color='none' className='filters'>Feed</Button>
+                  <Button color='none' className='filters'>Week</Button>
+                  <Button color='none' className='filters'>Month</Button>
+                  <Button color='none' className='filters'>Infinity</Button>
+                  <Button color='none' className='filters'>Latest</Button>
               </div>
           </nav>
           { /*<select id="dropdown-select" className="dropdown">
@@ -46,12 +59,15 @@ const Content = () => {
           </select> */}
     
       <div className="articles">
-        {/* {articles &&
-          articles.map((article, id) => {
-            return <ArticleComponent key={id} data={article} />;
-          })} */}
-          <Cards/>
-        {/* {!articles && [1, 2, 3, 4, 5].map((a) => <ArticleStructure key={a} />)} */}
+
+          { posts.map((post, index) => {
+            return ( <Cards
+              postKey = {post._id}
+              postData = {post}
+              postIndex = {index}
+              />)
+          })}
+
       </div>
     </section>
   );

@@ -1,0 +1,47 @@
+footer > .custom-container {
+  max-width: 768px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px;
+}
+
+.f-divider {
+  position: relative;
+  right: 100px;
+}
+
+.f-divider::after {
+  content: " ";
+  position: absolute;
+  height: 1px;
+  width: 200px;
+  border: none;
+  background-color: #08090a;
+  opacity: 0.10;
+}
+
+.post-list {
+  padding: 5px;
+}
+
+.bg-gray {
+  background-color: #d2d6db;
+}
+
+.f-size {
+  text-align: center;
+  font-size: 90%;
+}
+
+span {
+  font-weight: bold;
+}
+/*# sourceMappingURL=styles.css.map */
