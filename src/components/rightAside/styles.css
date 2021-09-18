@@ -1,0 +1,94 @@
+/*CARD 2ND PAGE RIGHT ASIDE*/
+.post-detail-profile {
+  top: 72px;
+}
+
+.post-detail-profile .post-detail-profile-info {
+  border-top: 2rem solid #202428;
+  padding-top: 0px;
+}
+
+.post-detail-profile .post-detail-profile-info .card-header {
+  border: none;
+  background: transparent;
+  margin-top: -2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.post-detail-profile .post-detail-profile-info .card-header img {
+  margin-bottom: 0px;
+}
+
+.post-detail-profile .post-detail-profile-info .card-header .card-title {
+  margin-top: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-left: .5rem;
+  margin-bottom: .25rem;
+}
+
+.post-detail-profile .post-detail-profile-info .card-body .follow-btn {
+  background-color: #323ebe;
+  width: 100%;
+  height: 3em;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  padding: .5rem 1rem;
+  height: auto;
+}
+
+.post-detail-profile .post-detail-profile-info .card-body .follow-btn:hover {
+  background-color: #2d37aa;
+}
+
+.post-detail-profile .post-detail-profile-info .card-body .list-style {
+  list-style-type: none;
+  padding: 0;
+}
+
+.post-detail-profile .post-detail-profile-info .card-body .list-style li {
+  margin-bottom: .5rem;
+}
+
+.post-detail-profile .post-detail-profile-info .card-body .simon-txt {
+  font-size: .75rem;
+  color: #64707d;
+}
+
+.img-size {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  margin-bottom: 1em;
+}
+
+.laptop-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.card-span {
+  opacity: .40;
+}
+
+.card-txt {
+  color: gray;
+  font-size: small;
+  font-weight: normal;
+  padding-top: .25em;
+  padding-left: 2em;
+}
+
+/* End of Aside Right */
+/*# sourceMappingURL=styles.css.map */
