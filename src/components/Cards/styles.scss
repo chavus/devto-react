@@ -100,6 +100,10 @@ $bg-reaction-color-black: rgba(0,0,0,.04);
 }
 
 .post-card{
+    .card-img-top{
+        object-fit: cover;
+        height: 220px;
+    }
     .card-body{
         .c-header{
             .c-name{
@@ -121,9 +125,14 @@ $bg-reaction-color-black: rgba(0,0,0,.04);
                 }
             }
             nav{
-                a{
+                Link{
                     color: $main-gray;
                     font-size: 14px;
+                    &:hover{
+                        color: $main-black;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
                 }
             }
             .read{
@@ -131,16 +140,15 @@ $bg-reaction-color-black: rgba(0,0,0,.04);
                 color: #363d44;
                 font-weight: 700;
                 align-items: center;
-                button{
-                    color: #363d44;
-                    font-weight: 700;
-                }
+
+                
                 .d-flex{
                     align-items: center;
                 }
                 .save{
                     padding: .25rem .5rem;
                     font-weight: 400;
+                    color: $main-gray;
                 }
             }
             
@@ -152,5 +160,45 @@ $bg-reaction-color-black: rgba(0,0,0,.04);
                 font-size: 30px;
             }
         }
+    }
+}
+
+.counters{
+    color: #363d44;
+    font-size: 15px;
+    //font-weight: 700;
+    &:hover{
+        color: $main-black;
+        background-color: #e6e6e7;
+         border-radius: 5px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all .6s ease;
+        -webkit-transition: all .6s ease;
+    }
+}
+
+.tag-list{
+    color: $main-gray;
+    font-size: 15px;
+    &:hover{
+        color: $main-black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+.save{
+    padding: .25rem .5rem;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgb(73, 73, 73);
+    &:hover{
+        color: $main-black;
+        background-color: rgb(179, 179, 179);
+        text-decoration: none;
+        cursor: pointer;
+        transition: all .6s ease;
+        -webkit-transition: all .6s ease;
     }
 }
