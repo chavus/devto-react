@@ -102,7 +102,7 @@ $bg-reaction-color-black: rgba(0,0,0,.04);
 .post-card{
     .card-img-top{
         object-fit: cover;
-        height: 220px;
+        max-height: 220px;
     }
     .card-body{
         .c-header{
@@ -124,17 +124,8 @@ $bg-reaction-color-black: rgba(0,0,0,.04);
                     color: rgb(140, 255, 249);
                 }
             }
-            nav{
-                Link{
-                    color: $main-gray;
-                    font-size: 14px;
-                    &:hover{
-                        color: $main-black;
-                        text-decoration: none;
-                        cursor: pointer;
-                    }
-                }
-            }
+           
+            
             .read{
                 font-size: 14px;
                 color: #363d44;

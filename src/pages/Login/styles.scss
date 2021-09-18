@@ -1,4 +1,4 @@
-.container{
+.container-login{
     width: 90vh;
     height: 99vh;
     border: 1px solid lightgrey;
@@ -39,9 +39,7 @@ button{
     width: 100%;
     background-color: #3b49df;
 }
-footer{
-    margin-top: 7vw;
-}
+
 @media(min-width:768px){
     .group-btns{
         #apple{

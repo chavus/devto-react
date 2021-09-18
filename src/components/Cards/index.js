@@ -11,18 +11,18 @@ const CardComponent =  (props)=> {
     return(
 
         <div className="card mt-3 br-post post-card">
-          { postIndex == 0 && <img src={coverImage} class="card-img-top" alt="..."/> }
-            <div className="card-body" key={postKey}>
+          { postIndex == 0 && <img src={coverImage} className="card-img-top" alt="..."/> }
+            <div className="card-body p-3" key={postKey}>
                 <div className="d-flex c-header">
-                        <img src="https://picsum.photos/200/300" alt="" className="br-100 pad"/>
+                        <img src="https://picsum.photos/200/300" alt="" className="br-100 "/>
                     <div className="d-flex c-name">
                         <h6 className="nickname mb-0">{writer.userName}</h6>
                         <p>{readablePublishedDate }</p>
                     </div>   
                 </div>
-                <div classNameName="card-content pl-5 pt-2">
-                    <Link to={`/postDetail/${postKey}`} classNameName="post-list">
-                        <h4 classNameName="card-title">{title}</h4>
+                <div className="card-content pl-5 pt-2">
+                    <Link to={`/postDetail/${postKey}`} className="post-list">
+                        <h4 className="card-title">{title}</h4>
                     </Link>
                     <div className="d-flex h-order">
                         <nav className="">{ 
@@ -57,12 +57,12 @@ const CardComponent =  (props)=> {
                                 <path
                                     d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z">
                                 </path>
-                            </svg>
-                            {comments.length != 0 ? comments.length + ' Comments'
-                                                                               : 'Add a Comment'}</Link>
+                            </svg><span className="not-b">
+                            {comments.length != 0 ? comments.length + '  Comments'
+                                                                               : ' Add a Comment'}</span></Link>
                         </div>
                         <div className="d-flex">
-                            <p className="card-text mb-0 mt-1"><small className="text-muted">{readingTimeMinutes} min read</small></p>
+                            <p className="card-text mb-1 mt-1"><small className="text-muted not-b">{readingTimeMinutes} min read</small></p>
                             <button className="save">Save</button>
                         </div>
                     </div>

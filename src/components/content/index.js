@@ -21,6 +21,7 @@ const Content = () => {
 
   const [posts, setPosts] = useState([]);
   const [filter, setFilter] = useState('Feed')
+  const [filteredPost, setFilteredPost] = useState('')
 
 	useEffect(async () => {
 
