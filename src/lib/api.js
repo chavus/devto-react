@@ -1,9 +1,16 @@
 const BASE_URL = "https://devto-backend-rested-swan-kl.mybluemix.net"
 
 export default{
-    
+    async authenticate(data){
+        let result = await fetch(`${BASE_URL}/auth/login`,{
+            method: "POST",
+            headers:{
+                'Content-Type':'application/json'            },
+            body: JSON.stringify(data)
+        })
+        return await result.json()
+    },
     async getAllPosts(jwtToken){
-
         let result = await fetch(`${BASE_URL}/posts`,{
             headers:{
                 'Authorization': jwtToken
@@ -37,7 +44,7 @@ export default{
 
     },
     async updatePost(id, data, jwtToken){
-        
+
         let response = await fetch(`${BASE_URL}/posts/${id}`,{
             method: "PATCH",
             headers:{
@@ -47,7 +54,7 @@ export default{
             body: JSON.stringify(data)
         })
         const resJson = await response.json()
-        return resJson.data.updatePost
+        return resJson
     },
     async getCommentsByPostId(id, jwtToken){
         
@@ -77,6 +84,38 @@ export default{
         postCommentsIds.push(commentId)
         this.updatePost(postId, {comments:postCommentsIds}, jwtToken)
         return postCommentsIds
+    },
+    async updateComment(id, data, jwtToken){
+
+        let response = await fetch(`${BASE_URL}/comments/${id}`,{
+            method: "PATCH",
+            headers:{
+                'Content-Type':'application/json',
+                'Authorization': jwtToken
+            },
+            body: JSON.stringify(data)
+        })
+        const resJson = await response.json()
+        return resJson
+
+    },
+    async getAllUsers(jwtToken){
+        let result = await fetch(`${BASE_URL}/users`,{
+            headers:{
+                'Authorization': jwtToken
+            }
+        })
+        const resJson = await result.json()
+        return resJson.data.allUsers
+    },
+    async getUserById(id, jwtToken){
+        let result = await fetch(`${BASE_URL}/users/${id}`,{
+            headers:{
+                'Authorization': jwtToken
+            }
+        })
+        const resJson = await result.json()
+        return resJson
     }
     
 }

@@ -1,29 +1,34 @@
+import heartAction from "../../img/icons/heart-action.svg"
+import unicornAction from "../../img/icons/unicorn-action.svg"
+import saveAction from "../../img/icons/save-action.svg"
+import moreAction from "../../img/icons/more-action.svg"
 
 
-export default function LeftAside(){
+export default function LeftAside(props){
+	
     return(
         <div class="post-detail-actions">
-					<button class="action heart" id="reactions-btn">
+					<button class="action heart" id="reactions-btn" onClick={ props.likePost }>
 						<span class="icon">
-							<img src="img/icons/heart-action.svg" alt="like"></img>
+							<img src={ heartAction } alt="like"></img>
 						</span>
-						<span class="counter" id="reactions-count">100</span>
+						<span class="counter" id="reactions-count"> {props.positiveReactionsCount} </span>
 					</button>
 					<button class="action unicorn">
 						<span class="icon">
-							<img src="img/icons/unicorn-action.svg" alt="unicorn"></img>
+							<img src={ unicornAction } alt="unicorn"></img>
 						</span>
 						<span class="counter">500</span>
 					</button>
 					<button class="action save">
 						<span class="icon">
-							<img src="img/icons/save-action.svg" alt="save"></img>
+							<img src={ saveAction } alt="save"></img>
 						</span>
 						<span class="counter">60</span>
 					</button>
 					<button class="action more">
 						<span class="icon">
-							<img src="img/icons/more-action.svg" alt="like"></img>
+							<img src={ moreAction } alt="like"></img>
 						</span>
 					</button>
 				</div>

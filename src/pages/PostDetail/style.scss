@@ -129,11 +129,21 @@ header{
 }
 
 .discussion-comment-box{
-    padding-right: 3rem;
+    // padding-right: 3rem;
+    .comment-form{
+        margin-left: 1rem;
+    }
 }
 
+.comment-info{
+    margin-left: 1rem;
+    width: 100% ;
+}
 .comment-form{
     width: 100%;
+}
+.c-name{
+    margin-left: 1rem
 }
 
 @media (min-width:768px){
@@ -539,7 +549,7 @@ section.post-detail{
             color: black;
         }
         .card-format{
-            padding: 3em
+            // padding: 3em
         }
     img{
         max-width: 100%;
@@ -551,6 +561,8 @@ div{
         background-color: hsl(294, 100%, 20%);
         color: white;
         border-radius: 6px;
+        padding: 1px 6px;
+        margin-right:3px;
     }
     .btn-card-3{
         background-color: green;
@@ -754,6 +766,11 @@ h4:hover, li:hover{
 /* End of Aside Right */
 
 /*CARD 2ND PAGE "READ NEXT"*/
+.card-img-top{
+    aspect-ratio: 1000/420;
+    object-fit: cover;
+    object-position: center;
+}
 .title{
     color: $main-black;
     font-weight: bold;
@@ -780,6 +797,7 @@ h4:hover, li:hover{
 
 .pt-card{
     height: 60px;
+    width: 60px;
     border-radius: 100%;
 }
 

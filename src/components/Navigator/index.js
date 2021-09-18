@@ -32,7 +32,7 @@ function Navbar() {
                                 </div>
                                 <form className="seach">
                                     <input className="form-control " type="search" placeholder="Search..." aria-label="Search..." id="search"/>
-                                    <Link className="search-button" to="/search"><i><img src="images/icons/search.svg" alt="search"/></i></Link>
+                                    <Link className="search-button" to="/search"><i><img src="/images/icons/search.svg" alt="search"/></i></Link>
                                 </form>
                                 <div className="navbar-right d-flex  align-items-center">
                                     <button onclick="window.location.href='New.html';"
@@ -40,8 +40,8 @@ function Navbar() {
                                         Post</button>
                                     <Link to="/search" class="d-flex d-md-none"><img src="images/icons/search.svg" alt="search"/></Link>
                                   
-                                        <Link className="icons-links" to=""><img src="images/icons/connect.svg" alt="connect"/></Link>
-                                        <Link className="icons-links" to=""><img src="images/icons/notifications.svg" alt="notifications"/></Link>
+                                        <Link className="icons-links" to=""><img src="/images/icons/connect.svg" alt="connect"/></Link>
+                                        <Link className="icons-links" to=""><img src="/images/icons/notifications.svg" alt="notifications"/></Link>
                                   
                                    
 
