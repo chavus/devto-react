@@ -17,9 +17,11 @@ import Footer from '../../components/Footer'
 
 import './styles.scss'
 
-function Login(){
+function Login(props){
     const [formData, setFormData] = useState({})
     let history = useHistory()
+    props.changeIsCreatePost(false)
+    // const onContinueClick = props.onContinueClick
 
     function onInputChange(event){
         const value = event.target.value
@@ -37,11 +39,14 @@ function Login(){
             delete userData.password
             localStorage.setItem("userData",JSON.stringify({...userData, token}))
             console.log("Successfully logged in")          
+            props.changeUserData(userData)
             history.push("/")
         }else{
             //Pintamos un error
         }
     }
+
+
 
     return(
         <>

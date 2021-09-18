@@ -4,7 +4,8 @@ import {
   } from "react-router-dom";
   import "./search.scss"
 
-function Search(){
+function Search(props){
+    props.changeIsCreatePost(false)
     return(
         <main className="container-sm custom-container">
 
