@@ -1,12 +1,10 @@
-import React,{ useState, useEffect } from 'react'
 import './styles.scss'
 import { Link } from 'react-router-dom';
-import { Button } from 'reactstrap';
-import api from '../../lib/api'
+
 
 const CardComponent =  (props)=> {
 
-    const { postKey,  postIndex, postData } =  props
+    const { postKey,  postIndex } =  props
     const { comments, coverImage, positiveReactionsCount, readablePublishedDate, readingTimeMinutes, tagsList, title, writer} =  props.postData
 
     
