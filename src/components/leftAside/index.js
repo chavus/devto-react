@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-import "./_leftaside.scss"
+import React, { useState, useEffect } from "react";
 import {
   Link,
 } from "react-router-dom";
+
+import "./_leftaside.scss"
+
 import {
   FcLike,
 } from "react-icons/fc";
@@ -11,6 +13,8 @@ import{
 }from "react-icons/gr";
 import { IoLogoTwitter, IoLogoFacebook, IoLogoGithub } from "react-icons/io";
 import { RiInstagramFill, RiTwitchLine } from "react-icons/ri";
+
+import { useLocation } from "react-router-dom"
 
 const tags = [
   "css",
@@ -34,6 +38,16 @@ const tags = [
 ];
 
 const LeftAsideB = (props) => {
+
+ // const [userData, setUserData] = useState(null)
+ const userData = props.userData
+ console.log(userData)
+ const location = useLocation()
+
+ useEffect(()=>{
+     console.log(location.pathname)
+ },[])
+
   const [more, setmore] = useState(false);
   const toggle = () => {
     setmore(!more);
@@ -42,7 +56,7 @@ const LeftAsideB = (props) => {
     <>
 
       <aside className="leftBar">
-
+      {!userData && 
       <div className="card card-aside">
           <div className="cardbody">
             <div className="card-text">
@@ -56,7 +70,7 @@ const LeftAsideB = (props) => {
             </div>
           </div>
         </div>
-
+      }
         <nav className="leftBar__menu">
         
         <header className="left-titles">
@@ -144,8 +158,10 @@ const LeftAsideB = (props) => {
 
         <nav className="leftBar__taglist">
           <header className="left-titles">
-            <h5>Popular Tags</h5>
-            <h5>My Tags</h5>
+          {!userData && 
+            <h5>Popular Tags</h5>}
+          {userData && 
+            <h5>My Tags</h5>}
             <span><img src="/images/aside1/losbuenos/engrande.svg" alt=""/></span>
           </header>
           <ul>
@@ -158,6 +174,11 @@ const LeftAsideB = (props) => {
             })}
           </ul>
         </nav>
+
+        <div className="sticker-card">
+        <img class="ad-img-left" src="images/photos/ads.png" alt="aside-ad"/>
+					<p class="a-l-txt-color">Do you have your sticker pack yet?</p>
+        </div>
       </aside>
 
       {props.burgerMenu && (

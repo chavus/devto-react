@@ -12,14 +12,18 @@ import Footer from '../../components/Footer'
 
 const Home = (props)=> {
     
+    const userData = props.userData
     props.changeIsCreatePost(false)
+
 
     return(
     <>
        <Container>
             <Row className="main-container d-flex">
                 <Col xs='12' md='4' xl='3' >
-                   <LeftAsideB/>
+                   <LeftAsideB
+                   userData = { userData }
+                   />
                 </Col>  
                 <Col xs='12' md='8' xl='6'>
                    <Content/>

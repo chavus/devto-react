@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Session from "react-session-api"
+
 import { useParams, useHistory} from "react-router-dom"
 import api from "../../lib/api"
 import { useLocation } from "react-router-dom"
