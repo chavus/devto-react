@@ -3,17 +3,12 @@ import {
     Link,
 } from "react-router-dom";
 import "./_navigation.scss"
-import { useLocation } from "react-router-dom"
 
 
 function Navbar(props) {
     // const [userData, setUserData] = useState(null)
     const userData = props.userData
-    const location = useLocation()
 
-    useEffect(()=>{
-        console.log(location.pathname)
-    },[])
 
     return (
         <div>
