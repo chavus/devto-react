@@ -8,6 +8,7 @@ main{
     .create-post-inner{
         max-width: 1280px;
         .header-nav-container{
+            
             .page-title-wrapper{
                 display: flex;
                 align-items: center;
@@ -34,11 +35,29 @@ main{
             }
         }
         .create-post-container{
-            .main-creation-container{
+                          .main-creation-container{
                 .post-content-container{
+                    height: 75vh;
+  
                     .post-content-header{
 
-                        .new-cover-img {
+                        .image-preview-wrapper{
+                            .image-preview-container{
+                                .image-preview-div{                                 
+                                    
+                                    .image-preview{
+                                        object-fit: cover;
+                                        border-radius: 5px ;
+                                    }
+                                }
+                                
+                            }
+
+                        }    
+
+
+                        .new-cover-img {    // BUTTON ADD POST IMAGE
+                            
                             width: 150px;
                             height: 50px;
                             overflow: hidden;
@@ -51,54 +70,94 @@ main{
                             font-family: "Montserrat", sans-serif;
                             font-weight: bold;
                             opacity: 3;  
-                                                        
-                            .input-file-image-name
+                                                       
+                            .input-file-image-name  //INPUT POST IMAGE
                             {
                                 display:none;
                                 
                             }
                             
-                            .label-post-cover-image
+                            .label-post-cover-image   // LABEL BUTTON POST IMAGE
                             {
                                 text-align:center;
                             }
 
                           }
 
-                        .cover-image-input-wrapper{
-                            .image-url-input{
-                                    border: none; 
-                                    font-family: monospace;
-                                }
+                        .title-container{     // POST TITLE
                             .post-title-text{
-                                    font-weight: 700; 
-                                    border: none; 
-                                    resize: none;
-                                    color:red;
-                                    font-family: 'Barlow Semi Condensed', sans-serif !important;
-                            }                                                        
-                            .tag-input-text{
-                                border: 2px red solid; 
-                                font-family: monospace
-                            } 
-                            
-                            .upload-image {
-                                width: 100%;
-                                height: 50px;
-                                overflow: hidden;
-                                text-align: center;
-                                background-color: #eef0f1;
-                                padding: 0.9em;
-                                border-color: darkgrey;
-                                border: solid 2px;
+                                font-weight: 700; 
                                 border: none;
-                                font-family: "Montserrat", sans-serif;
-                                font-weight: bold;
-                                opacity: 3;
-                              }
+                                padding: 0;
+                                margin: 0;
+                                outline: none;
+                                width: 100%;
+                                box-shadow: none;
+                                resize: none;
+                                transition: none;
+                                //min-height: 50px;
+                                //max-height: 50px;
+                            } 
+                        }
+
+                        .tags-container{
+                            .tag-input-text{  // POST TAGS
+                                background: transparent;
+                                border: none;
+                                padding: 0;
+                                margin: 0;
+                                outline: none;
+                                width: 100%;
+                                box-shadow: none;
+                                resize: none;
+                                transition: none;
+                                font-family: monospace;
+                                font-size: 1.125rem;
+                            } 
 
                         }
+
+                        .other-image-button {   // OTHER POST IMAGE
+                            width: 100%;
+                            height: 50px;
+                            overflow: hidden;
+                            text-align: center;
+                            background-color: #eef0f1;
+                            padding: 0.9em;
+                            border-color: darkgrey;
+                            border: solid 2px;
+                            border: none;
+                            font-family: "Montserrat", sans-serif;
+                            font-weight: bold;
+                            opacity: 3;
+
+                            .other-image-input{
+                                display:none;
+                            }
+                          }                       
+                       
                     }
+                    .post-content-body{
+                         .text-body-container{
+                             .publish-post{  // POST TEXT CONTENT
+                                background: transparent;
+                                border: none;
+                                padding: 0;
+                                margin: 0;
+                                outline: none;
+                                width: 100%;
+                                box-shadow: none;
+                                //resize: none;
+                                //transition: none;
+                                font-family: monospace;
+                                font-size: 1.125rem;
+                             }       
+
+                         }   
+
+                    }
+                    
+
                 }
             }
         }
