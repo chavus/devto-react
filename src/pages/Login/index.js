@@ -50,53 +50,42 @@ function Login(props){
 
     return(
         <>
-            <div className="supermain-container-login">
-            <Row className="main-container-login d-flex">
-            <div className="container-login bg-light p-3">
-            <Col xs='12' >
-                    <div>
-                        <h1 className="font-weight-bold text-center">Welcome to DEV Community</h1>
-                        <p className="text-center"><span className="text-relevant">DEV Comunity</span> is a community of 693,496 amazing developers</p>
-                    </div>
-            <Col xs='12'>
-                    <div className="group-btns d-flex flex-column">
-                        <Button id="apple" className="mt-2" type="button" color="dark" size="lg" block>Continue whit Apple</Button>
-                        <Button id="github" className="mt-2" type="button" color="secondary" size="lg" block>Continue whit GitHub</Button>
-                        <Button id="twitter" className="mt-2" type="button"  size="lg" block>Continue with Twitter</Button>
-                    </div>
-            </Col>       
-                    <div className="mt-3">
-                    <p className="text-center">Have a password? Continue with your email address</p>
-                    </div>
-            </Col>
-            <Col xs='12'>
-                <Form className="py-3">
-                    <FormGroup className="mb-2">
-                        <Label className="mb-2">Email</Label>
-                        <Input className="text-here" name="email" onChange={ onInputChange }/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label className="mb-2">Password</Label>
-                        <Input className="text-here" type="password" name="password" onChange={ onInputChange} />
-                    </FormGroup>
-                    <div className="mt-2">
-                        <input type="checkbox"/>
-                        <label> Remember me</label>
-                    </div>
-                    <Button id= "continue"className="mt-3" type="button" size="lg" block  onClick={ onContinueClick }>Continue</Button>
-                    <p className="text-center mt-3"><span className="text-relevant">I forgot my password</span></p>
-                </Form>
-            </Col>
-                <div>
-                    <div className="mt-3 mb-5">
-                        <p class="text-center text-muted ">Open Source <img src={sunglasses} alt="sunglasses"/> • Free Forever <img src={heart} alt="heart"/></p>
-                        <p class="text-center text-muted ">We strive for transparency and don't collect excess data.</p>
-                    </div>
-                </div>  
-            </div>
-            </Row>
+            <div className="d-flex flex-column justify-content-center align-items-center supermain-container-login">
+                <div className="bg-white rounded border p-4">
+                    <h1 className="font-weight-bold text-center">Welcome to DEV Community</h1>
+                    <p className="text-center"><span className="text-relevant">DEV Comunity</span> is a community of 693,496 amazing developers</p>
+                        <div className="group-btns d-flex flex-column">
+                            <Button id="apple" className="mt-2" type="button" color="dark" size="lg" block>Continue whit Apple</Button>
+                            <Button id="github" className="mt-2" type="button" color="secondary" size="lg" block>Continue whit GitHub</Button>
+                            <Button id="twitter" className="mt-2" type="button"  size="lg" block>Continue with Twitter</Button>
+                        </div>
+                        <div className="mt-3">
+                            <p className="text-center">Have a password? Continue with your email address</p>
+                        </div>
+                    <Form className="py-3 ">
+                        <FormGroup className=" form-login mb-2">
+                            <Label className="mb-2">Email</Label>
+                            <Input className="text-here" type="text" name="email" onChange={ onInputChange }/>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label className="mb-2">Password</Label>
+                            <Input className="text-here" type="text" name="password" onChange={ onInputChange} />
+                        </FormGroup>
+                            <div className="mt-2">
+                                <input type="checkbox"/>
+                                <label> Remember me</label>
+                            </div>
+                        <Button id= "continue"className="mt-3" type="button" size="lg" block  onClick={ onContinueClick }>Continue</Button>
+                        <p className="text-center mt-3"><span className="text-relevant">I forgot my password</span></p>
+                    </Form>
+                </div>
+                <div className="info-card pt-3 d-flex flex-column justify-content-center align-items-center text-center">
+                    <p class="text-center text-muted ">Open Source <img src={sunglasses} alt="sunglasses"/> • Free Forever <img src={heart} alt="heart"/></p>
+                    <p class="text-center text-muted ">We strive for transparency and don't collect excess data.</p>
+                </div>
             </div>
             <Footer/>
+              
         </>
     )
 }
