@@ -13,25 +13,50 @@ import moment from 'moment'
 
 const Content = () => {
 
-  const getYear = date => moment(date).year()
-  const getMonth = date => moment(date).month()
-  const getWeek = date => moment(date).isoWeek()
-
-  const currentDate = moment(new Date)
+  const putYear = date => moment(date).year()
+  const putMonth = date => moment(date).month()
+  const putWeek = date => moment(date).isoWeek()
 
   const [posts, setPosts] = useState([]);
-  const [filter, setFilter] = useState('Feed')
-  const [filteredPost, setFilteredPost] = useState(posts)
+  const [filterName, setFilterName] = useState('feed')
+  const [filteredPosts, setFilteredPosts] = useState(posts)
 
 	useEffect(async () => {
 
         const result = await api.getAllPosts()  
         console.log(result) 
         setPosts(result)
+        setFilteredPosts(result)
        
     }, []) 
 
-   
+  const onFilterClick = (event) => {
+    console.log('filterclick')
+    let name = event.target.name
+    setFilterName( name )
+ 
+    let filteredPostRes = filterBy(name)
+    setFilteredPosts( filteredPostRes )
+  }  
+  
+  const filterBy = (filterNameArg) => {
+
+      if(filterNameArg == 'feed' || filterNameArg == 'infinity' ){
+          return posts
+      } else if (filterNameArg == 'week'){
+        return posts.filter( post => moment(post.publishedTimestamp) >= moment().subtract(7, 'days')) 
+      } else if (filterNameArg == 'month'){
+        return posts.filter( post => moment(post.publishedTimestamp) >= moment().subtract(1, 'month'))
+      } else if (filterNameArg == 'latest'){
+        let postCopy = [...posts]
+        postCopy.sort((x,y) => {
+          return moment(y.publishedTimestamp) - moment(x.publishedTimestamp)
+        })
+        return postCopy
+        }
+      }
+
+  
 
   return (
     <section className = "cards-section">
@@ -41,11 +66,11 @@ const Content = () => {
                   <h1 className='subtitle'>Posts</h1>
               </div>
               <div>
-                  <Button color='none' className='filters'>Feed</Button>
-                  <Button color='none' className='filters'>Week</Button>
-                  <Button color='none' className='filters'>Month</Button>
-                  <Button color='none' className='filters'>Infinity</Button>
-                  <Button color='none' className='filters'>Latest</Button>
+                  <Button color='none' className='filters' name='feed' onClick={onFilterClick}>Feed</Button>
+                  <Button color='none' className='filters' name='week' onClick={onFilterClick}>Week</Button>
+                  <Button color='none' className='filters' name='month' onClick={onFilterClick}>Month</Button>
+                  <Button color='none' className='filters' name='infinity' onClick={onFilterClick}>Infinity</Button>
+                  <Button color='none' className='filters' name='latest' onClick={onFilterClick}>Latest</Button>
               </div>
           </nav>
           { /*<select id="dropdown-select" className="dropdown">
@@ -61,7 +86,7 @@ const Content = () => {
     
       <div className="articles">
 
-          { posts.map((post, index) => {
+          { filteredPosts.map((post, index) => {
             return ( <Cards
               postKey = {post._id}
               postData = {post}
