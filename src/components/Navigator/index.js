@@ -3,17 +3,17 @@ import {
     Link,
 } from "react-router-dom";
 import "./_navigation.scss"
-import { useLocation } from "react-router-dom"
 
 
 function Navbar(props) {
     // const [userData, setUserData] = useState(null)
     const userData = props.userData
-    const location = useLocation()
+    const [searchTerm, setSearchTerm] = useState("")
 
-    useEffect(()=>{
-        console.log(location.pathname)
-    },[])
+    function onSearchChange(event){
+        const value = event.target.value
+        setSearchTerm(value)
+    }
 
     return (
         <div>
@@ -41,8 +41,8 @@ function Navbar(props) {
 
                                 </div>
                                 <form className="seach">
-                                    <input className="form-control " type="search" placeholder="Search..." aria-label="Search..." id="search"/>
-                                    <Link className="search-button" to="/search"><i><img src="/images/icons/search.svg" alt="search"/></i></Link>
+                                    <input className="form-control " type="text" placeholder="Search..." aria-label="Search..." id="search" onChange={ onSearchChange }/>
+                                    <Link className="search-button" to={`/search?search=${searchTerm}`}><i><img src="/images/icons/search.svg" alt="search"/></i></Link>
                                 </form>
                                 <div className="navbar-right d-flex  align-items-center">
                                 { userData && 

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-
 import { useParams, useHistory} from "react-router-dom"
 import api from "../../lib/api"
-import { useLocation } from "react-router-dom"
 import getUserData from "../../lib/auth";
 
 import {
