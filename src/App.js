@@ -51,6 +51,7 @@ function App(props) {
     }
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
+        { true && 
         <Switch>
           <Route path="/createPost"> 
               <CreatePost
@@ -79,6 +80,7 @@ function App(props) {
             />
           </Route>
         </Switch>
+}
     </Router>
   );
 }
