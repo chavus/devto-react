@@ -54,7 +54,7 @@ export default function MainSection(props){
                     <img className="rounded-circle mr-2" width="24px" height="24px" src= { loggedAvatar } alt="chava"/>
                     <form className="comment-form m">
                         <div className="input-group">
-                            <textarea className="form-control" placeholder="Add to the discussion" id="comment-input" value={ props.comment }onChange={ props.handleInputChange }></textarea>
+                            <textarea className="form-control" placeholder="Add to the discussion" id="comment-input" value={ props.comment } onChange={ props.handleInputChange }onFocus={ props.onCommentClick }></textarea>
                             <div className="invalid-feedback">
                                 Huh? You didn't enter text, please do it!
                                 </div>

@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
-import Session from "react-session-api"
-import api from "./lib/api"
+import React, { useEffect, useState } from 'react';
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
+  useParams,
+  useLocation,
+  useHistory
 } from "react-router-dom";
 
 import './App.scss';
@@ -22,52 +23,61 @@ import PostDetail from './pages/PostDetail';
 import Search from './pages/Search';
 
 
-function App() {
+function App(props) {
+  const [userData, setUserData ] = useState(null)
+  const [isCreatePost, setIsCreatePost] = useState(false)
+  const history = useHistory()
 
-  // When accessing pages
-  // When calling api
+  useEffect(()=>{
+    const userDataRaw = localStorage.getItem("userData") 
+    const userData = userDataRaw ? JSON.parse(userDataRaw) : null 
+    setUserData(userData)
+},[])
 
-  let token = {
-    expired:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMTk0OThmNzMzNTIwMTBlMDYyOTY4YyIsImlhdCI6MTYyOTI0ODExNSwiZXhwIjoxNjI5ODUyOTE1fQ.aTn_N0SS-QdNDWBxrH8KsztEWN5e0Tzx7fEqFeA1vvk",
-    valid:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMTk0NjUzNzMzNTIwMTBlMDYyOTY3ZSIsImlhdCI6MTYzMTY3NDc5MCwiZXhwIjoxNjMyMjc5NTkwfQ.ZWG2xqDggdGLunQtNmh9bNudZcQNFJT-Vyia6k_9fbg"
+  function changeUserData(myUserData){
+    setUserData(myUserData)
   }
 
-  Session.set("token", token.expired)
-  Session.set("userInfo", {})
-
-  useEffect(async ()=>{
-    const authRes = await api.authenticate({email:"mwortegam@gmail.com",password:"morita"})
-    if (authRes.success){
-      const token = authRes.data.token
-      const userId = JSON.parse(window.atob(token.split(".")[1])).id
-      const userRes = await api.getUserById(userId, token)
-      console.log(userRes)
-      Session.set("userInfo",{...userRes, token})
-    } else{ 
-      console.log(authRes.message)}                                                                         
-  },[])
+  function changeIsCreatePost(path){
+    setIsCreatePost(path)
+  }
 
   return (
     <Router>
-        <Navigation/>
+      { !isCreatePost &&
+        <Navigation
+          userData = { userData }
+        />
+    }
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         { true && 
         <Switch>
           <Route path="/createPost"> 
-            <CreatePost/>
+              <CreatePost
+                changeIsCreatePost = { changeIsCreatePost }
+              />
           </Route>
           <Route path="/login"> 
-             <Login/> 
+             <Login
+              changeUserData = {changeUserData}
+              changeIsCreatePost = { changeIsCreatePost }
+             /> 
           </Route>
           <Route path="/postDetail/:id">
-            <PostDetail/> 
+            <PostDetail
+              changeIsCreatePost = { changeIsCreatePost }
+              /> 
           </Route>
           <Route path="/search">
-            <Search/>
+            <Search
+              changeIsCreatePost = { changeIsCreatePost }
+            />
           </Route>
           <Route path="/"> 
-            <Home/>
+            <Home
+              changeIsCreatePost = { changeIsCreatePost }
+            />
           </Route>
         </Switch>
 }

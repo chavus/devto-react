@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Session from "react-session-api"
 import { useParams, useHistory} from "react-router-dom"
 import api from "../../lib/api"
+import { useLocation } from "react-router-dom"
+import getUserData from "../../lib/auth";
 
 import {
     Spinner
@@ -18,17 +20,17 @@ function PostDetail(){
     const [ postData, setPostData ] = useState(null)
     const [ postComments, setPostComments ] = useState([])
     const [ comment, setComment] = useState("")
-    const [ token, setToken ] = useState("")
+    const [userData, setUserData] = useState(null)
     const postId = useParams().id
     let history = useHistory()
 
     async function likePost(){
-        const positiveReactionsCount = postData.positiveReactionsCount + 1
-        setPostData( {...postData, positiveReactionsCount})
-        const response = await api.updatePost(postId, {positiveReactionsCount}, token)
-        if (!response.success){
-            console.log("not logged in")
-            history.push("/login")
+        if (!userData){
+            history.push('/login')
+        }else{
+            const positiveReactionsCount = postData.positiveReactionsCount + 1
+            setPostData( {...postData, positiveReactionsCount})
+            const response = await api.updatePost(postId, {positiveReactionsCount}, userData.token)
         }
     }
 
@@ -44,41 +46,49 @@ function PostDetail(){
             content: comment,
             creationDate: date,
             readableCreationDate: `${month} ${day}`,
-            userName: "6119465373352010e062967e",
+            userName: userData._id,
             reactionsCounter: 0,
         }
         console.log("commentData")
         console.log(commentData)
-        const response = await api.addComment(postId, commentData, token )
+        const response = await api.addComment(postId, commentData, userData.token )
         // if (!response.success){
         //     console.log("not logged in")
         //     history.push("/login")
         // }
         const postDataRes = await api.getPostById(postId)
-        const extendedPostData = await mapCommentsUsers(postDataRes, token)
+        const extendedPostData = await mapCommentsUsers(postDataRes, userData.token)
         console.log(extendedPostData)
         setPostData(extendedPostData)
         setComment("")
     }
 
     async function likeComment(event){
-        const commentId = event.currentTarget.dataset.commentId
-        console.log(commentId)
-        let comments = [...postData.comments]
-        console.log(comments)
-        const commentIdx = comments.findIndex(comment => comment._id == commentId)
-        console.log(commentIdx)
-        comments[commentIdx].reactionsCounter = comments[commentIdx].reactionsCounter + 1
-        console.log(comments)
-        setPostData({...postData, comments})
-        await api.updateComment(commentId, {reactionsCounter:comments[commentIdx].reactionsCounter}, token)
+        if (!userData){
+            history.push('/login')
+        }else{
+            const commentId = event.currentTarget.dataset.commentId
+            console.log(commentId)
+            let comments = [...postData.comments]
+            console.log(comments)
+            const commentIdx = comments.findIndex(comment => comment._id == commentId)
+            console.log(commentIdx)
+            comments[commentIdx].reactionsCounter = comments[commentIdx].reactionsCounter + 1
+            console.log(comments)
+            setPostData({...postData, comments})
+            await api.updateComment(commentId, {reactionsCounter:comments[commentIdx].reactionsCounter}, userData.token)
+        }
+    }
+
+    function onCommentClick(){
+        !userData && history.push('/login')
     }
 
     useEffect(async ()=>{
-        const tokenCurrent = Session.get("token")
-        setToken(tokenCurrent)
+        const userData = getUserData()
+        setUserData(userData)
         const postDataRes = await api.getPostById(postId)
-        const extendedPostData = await mapCommentsUsers(postDataRes, tokenCurrent)
+        const extendedPostData = await mapCommentsUsers(postDataRes, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMTk0NjUzNzMzNTIwMTBlMDYyOTY3ZSIsImlhdCI6MTYzMTkzNTE3MiwiZXhwIjoxNjMyNTM5OTcyfQ.zjjh8drORIg2FsjCN3FoWweLEZgwuj4w0bCRWc12xzQ")
         console.log(extendedPostData)
         setPostData(extendedPostData)
     },[])
@@ -90,7 +100,6 @@ function PostDetail(){
             const user = users.filter(user => user._id == userNameId)[0].userName
             return {...comment, readableUserName: user}
         })
-
         return {...postData, comments: extendedComments}
     }
 
@@ -112,7 +121,8 @@ function PostDetail(){
                     handleInputChange = { handleInputChange }
                     comment = { comment }
                     addComment = { addComment }
-                    likeComment = { likeComment }/>
+                    likeComment = { likeComment }
+                    onCommentClick ={ onCommentClick }/>
                 </section>
                 <aside className="d-none d-lg-block d-xl-block col-lg-3 col-xl-3">
                     <RightAside/>

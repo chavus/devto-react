@@ -97,6 +97,19 @@ export default{
         })
         const resJson = await response.json()
         return resJson
+        
+    },
+    async authenticate(data){
+       
+        let response = await fetch(`${BASE_URL}/auth/login`,{
+            method: "POST",
+            headers:{
+                'Content-Type':'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+        const resJson = await response.json()
+        return resJson
 
     },
     async getAllUsers(jwtToken){
@@ -109,6 +122,7 @@ export default{
         return resJson.data.allUsers
     },
     async getUserById(id, jwtToken){
+
         let result = await fetch(`${BASE_URL}/users/${id}`,{
             headers:{
                 'Authorization': jwtToken

@@ -10,7 +10,10 @@ import RightSidebar from "../../components/rightAside"
 import Content from "../../components/content"
 import Footer from '../../components/Footer'
 
-const Home = ()=> {
+const Home = (props)=> {
+    
+    props.changeIsCreatePost(false)
+
     return(
     <>
        <Container>

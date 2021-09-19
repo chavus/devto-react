@@ -9,6 +9,8 @@ import {
 import{
   GrFormClose,
 }from "react-icons/gr";
+import { IoLogoTwitter, IoLogoFacebook, IoLogoGithub } from "react-icons/io";
+import { RiInstagramFill, RiTwitchLine } from "react-icons/ri";
 
 const tags = [
   "css",
@@ -38,98 +40,119 @@ const LeftAsideB = (props) => {
   };
   return (
     <>
+
       <aside className="leftBar">
+
+      <div className="card card-aside">
+          <div className="cardbody">
+            <div className="card-text">
+              <h5><span>DEV Community</span> is a community of 694,903 amazing developers</h5>
+              <p className="login-text-card">We're a place where coders share, stay up-to-date and grow their careers.</p>
+              <div className="login-actions">
+                <Link className="blue-login-action" to="#">Create new account</Link>
+                <Link className="grey-login-action" to="/login">Log in</Link>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+
         <nav className="leftBar__menu">
-          <header>
-            <h3>DEV Community</h3>
-          </header>
+        
+        <header className="left-titles">
+              <h5>DEV Community</h5>
+        </header>
           <ul>
+           
             <li>
-              <a href="/home"><span><img src="images/icons/home.svg" alt=""/></span>Home</a>
+              <Link to="/home"><span><img src="/images/icons/home.svg" alt=""/></span>Home</Link>
             </li>
             <li>
-              <a href="/reading"><span><img src="images/icons/readinglist.svg" alt=""/></span>Reading List</a>
+              <Link to="/reading"><span><img src="images/icons/readinglist.svg" alt=""/></span>Reading List</Link>
             </li>
             <li>
-              <a href="/list"><span><img src="images/icons/listings.svg" alt=""/></span>Listings</a>
+              <Link to="/list"><span><img src="images/icons/listings.svg" alt=""/></span>Listings</Link>
             </li>
             <li>
-              <a href="/podcast"><span><img src="images/icons/podcasts.svg" alt=""/></span>Podcasts</a>
+              <Link to="/podcast"><span><img src="images/icons/podcasts.svg" alt=""/></span>Podcasts</Link>
             </li>
             <li>
-              <a href="/videos"><span><img src="images/icons/videos.svg"alt=""/></span>Videos</a>
+              <Link to="/videos"><span><img src="images/icons/videos.svg"alt=""/></span>Videos</Link>
             </li>
             <li>
-              <a href="/tags"><span><img src="images/icons/tags.svg" alt=""/></span>Tags</a>
+              <Link to="/tags"><span><img src="images/icons/tags.svg" alt=""/></span>Tags</Link>
             </li>
             <li className={more ? "more hidden" : "more"}>
               <i></i>
-              <a href="/#" onClick={toggle}>
+              <Link to="/#" onClick={toggle}>
                 More...
-              </a>
+              </Link>
             </li>
 
             <div className={more ? "list" : "list hidden"}>
               <li>
-                <a href="/FAQ"><span><img src="images/icons/faq.svg" alt=""/></span>FAQ</a>
+                <Link to="/FAQ"><span><img src="images/icons/faq.svg" alt=""/></span>FAQ</Link>
               </li>
               <li>
-                <a href="/DEV"><span><img src="images/icons/dev-shop.svg" alt=""/></span>DEV Shop</a>
+                <Link to="/DEV"><span><img src="images/icons/dev-shop.svg" alt=""/></span>DEV Shop</Link>
               </li>
               <li>
-                <a href="/sponsors"><span><FcLike /></span>Sponsors</a>
+                <Link to="/sponsors"><span><FcLike /></span>Sponsors</Link>
               </li>
               <li>
-                <a href="/about"><span><img src="images/icons/about.svg" alt=""/></span>About</a>
+                <Link to="/about"><span><img src="images/icons/about.svg" alt=""/></span>About</Link>
               </li>
               <li>
-                <a href="/contact"><span><img src="images/icons/contact.svg" alt=""/></span>Contact</a>
+                <Link to="/contact"><span><img src="images/icons/contact.svg" alt=""/></span>Contact</Link>
               </li>
-              <header>
-                <h3>Other</h3>
+            
+              <header className="left-titles">
+                <h5>Other</h5>
               </header>
-
+            
               <li>
-                <a href="/code"><span><img src="images/icons/code-of-conduct.svg" alt=""/></span>Code of Conduct</a>
+                <Link to="/code"><span><img src="images/icons/code-of-conduct.svg" alt=""/></span>Code of Conduct</Link>
               </li>
               <li>
-                <a href="/privacy"><span><img src="images/icons/privacy-policy.svg" alt="" /></span>Privacy Policy</a>
+                <Link to="/privacy"><span><img src="images/icons/privacy-policy.svg" alt="" /></span>Privacy Policy</Link>
               </li>
               <li>
-                <a href="/terms"><span><img src="images/icons/terms-of-use.svg" alt=""/></span>Terms of use</a>
+                <Link to="/terms"><span><img src="images/icons/terms-of-use.svg" alt=""/></span>Terms of use</Link>
               </li>
              
             </div>
-          </ul>
+            </ul>
         </nav>
 
         <div className={more ? "leftBar__social" : "leftBar__social hidden"}>
-          <a href="/twitter">
-            <span><img src="images/icons/twitter.svg" alt="twitter"/></span>
-          </a>
-          <a href="/facebook">
-            <span><img src="images/icons/facebook.svg" alt="facebook"/></span>
-          </a>
-          <a href="/github">
-            <span><images src="images/icons/github.svg" alt="github"/></span>
-          </a>
-          <a href="/instagram">
-            <span><img src="images/icons/instagram.svg" alt="instagram"/></span>
-          </a>
-          <a href="/twitch">
-            <span><img src="images/icons/twitch.svg" alt="twitch"/></span>
-          </a>
+          <Link to="/twitter">
+            <span> <IoLogoTwitter /></span>
+          </Link>
+          <Link to="/facebook">
+            <span> <IoLogoFacebook /></span>
+          </Link>
+          <Link to="/github">
+            <span><IoLogoGithub /></span>
+          </Link>
+          <Link to="/instagram">
+            <span><RiInstagramFill /></span>
+          </Link>
+          <Link to="/twitch">
+            <span><RiTwitchLine /></span>
+          </Link>
         </div>
+
         <nav className="leftBar__taglist">
-          <header>
-            <h3>My Tags</h3>
-            <span><img src="images/aside1/losbuenos/engrande.svg" alt="#"/></span>
+          <header className="left-titles">
+            <h5>Popular Tags</h5>
+            <h5>My Tags</h5>
+            <span><img src="/images/aside1/losbuenos/engrande.svg" alt=""/></span>
           </header>
           <ul>
             {tags.map((tag, id) => {
               return (
                 <li key={id}>
-                  <a href="/#">#{tag}</a>
+                  <Link to="/#">#{tag}</Link>
                 </li>
               );
             })}
@@ -141,7 +164,7 @@ const LeftAsideB = (props) => {
         <div className="hamburger">
           <div className="hamburger__content">
             <header>
-              <h2>DEV Community</h2>
+              <h5>DEV Community</h5>
               <button onClick={() => props.closeMenu()}>
                 <GrFormClose />
               </button>
@@ -149,74 +172,73 @@ const LeftAsideB = (props) => {
 
             <div className="hamburger__content__items">
             <nav className="leftBar__menu">
-          <header>
-            <h3>DEV Community</h3>
-          </header>
-          <ul>
-            <li>
-              <a href="/home"><span><img src="images/icons/home.svg" alt=""/></span>Home</a>
-            </li>
-            <li>
-              <a href="/reading"><span><img src="images/icons/readinglist.svg" alt=""/></span>Reading List</a>
-            </li>
-            <li>
-              <a href="/list"><span><img src="images/icons/listings.svg" alt=""/></span>Listings</a>
-            </li>
-            <li>
-              <a href="/podcast"><span><img src="images/icons/podcasts.svg" alt=""/></span>Podcasts</a>
-            </li>
-            <li>
-              <a href="/videos"><span><img src="images/icons/videos.svg"alt=""/></span>Videos</a>
-            </li>
-            <li>
-              <a href="/tags"><span><img src="images/icons/tags.svg" alt=""/></span>Tags</a>
-            </li>
-            <li className={more ? "more hidden" : "more"}>
-              <i></i>
-              <a href="/#" onClick={toggle}>
-                More...
-              </a>
-            </li>
-
-            <div className={more ? "list" : "list hidden"}>
-              <li>
-                <a href="/FAQ"><span><img src="images/icons/faq.svg" alt=""/></span>FAQ</a>
-              </li>
-              <li>
-                <a href="/DEV"><span><img src="images/icons/dev-shop.svg" alt=""/></span>DEV Shop</a>
-              </li>
-              <li>
-                <a href="/sponsors"><span><FcLike /></span>Sponsors</a>
-              </li>
-              <li>
-                <a href="/about"><span><img src="images/icons/faq.svg" alt=""/></span>About</a>
-              </li>
-              <li>
-                <a href="/contact"><span><img src="images/icons/contact.svg" alt=""/></span>Contact</a>
-              </li>
               <header>
-                <h3>Other</h3>
+                <h3>DEV Community</h3>
               </header>
+                <ul>
+                  <li>
+                    <Link to="/home"><span><img src="images/icons/home.svg" alt=""/></span>Home</Link>
+                  </li>
+                  <li>
+                    <Link to="/reading"><span><img src="images/icons/readinglist.svg" alt=""/></span>Reading List</Link>
+                  </li>
+                  <li>
+                    <Link to="/list"><span><img src="images/icons/listings.svg" alt=""/></span>Listings</Link>
+                  </li>
+                  <li>
+                    <Link to="/podcast"><span><img src="images/icons/podcasts.svg" alt=""/></span>Podcasts</Link>
+                  </li>
+                  <li>
+                    <Link to="/videos"><span><img src="images/icons/videos.svg"alt=""/></span>Videos</Link>
+                  </li>
+                  <li>
+                    <Link to="/tags"><span><img src="images/icons/tags.svg" alt=""/></span>Tags</Link>
+                  </li>
+                  <li className={more ? "more hidden" : "more"}>
+                    <i></i>
+                    <Link to="/#" onClick={toggle}>
+                      More...
+                    </Link>
+                  </li>
 
-              <li>
-                <a href="/code"><span><img src="images/icons/code-of-conduct.svg" alt=""/></span>Code of Conduct</a>
-              </li>
-              <li>
-                <a href="/privacy"><span><img src="images/icons/privacy-policy.svg" alt="" /></span>Privacy Policy</a>
-              </li>
-              <li>
-                <a href="/terms"><span><img src="images/icons/terms-of-use.svg" alt=""/></span>Terms of use</a>
-              </li>
-             
-            </div>
-          </ul>
-        </nav>
+                  <div className={more ? "list" : "list hidden"}>
+                    <li>
+                        <Link to="/FAQ"><span><img src="images/icons/faq.svg" alt=""/></span>FAQ</Link>
+                    </li>
+                    <li>
+                        <Link to="/DEV"><span><img src="images/icons/dev-shop.svg" alt=""/></span>DEV Shop</Link>
+                    </li>
+                    <li>
+                        <Link to="/sponsors"><span><FcLike /></span>Sponsors</Link>
+                    </li>
+                    <li>
+                        <Link to="/about"><span><img src="images/icons/faq.svg" alt=""/></span>About</Link>
+                    </li>
+                    <li>
+                        <Link to="/contact"><span><img src="images/icons/contact.svg" alt=""/></span>Contact</Link>
+                    </li>
+                    <header>
+                        <h5>Other</h5>
+                    </header>
+
+                    <li>
+                      <Link to="/code"><span><img src="images/icons/code-of-conduct.svg" alt=""/></span>Code of Conduct</Link>
+                    </li>
+                    <li>
+                      <Link to="/privacy"><span><img src="images/icons/privacy-policy.svg" alt="" /></span>Privacy Policy</Link>
+                    </li>
+                    <li>
+                      <Link to="/terms"><span><img src="images/icons/terms-of-use.svg" alt=""/></span>Terms of use</Link>
+                    </li>
+                  </div>
+                </ul>
+              </nav>
               <div className={more ? "leftBar__social" : "leftBar__social hidden"}>
-                <a href="/twitter"><span><img src="images/icons/twitter.svg" alt="twitter"/></span></a>
-                <a href="/facebook"><span><img src="images/icons/facebook.svg" alt="facebook"/></span></a>
-                <a href="/github"><span><images src="img/icons/github.svg" alt="github"/></span></a>
-                <a href="/instagram"><span><img src="img/icons/instagram.svg" alt="instagram"/></span></a>
-                <a href="/twitch"><span><img src="images/icons/twitch.svg" alt="twitch"/></span></a>
+                <Link to="/twitter"><span> <IoLogoTwitter /></span></Link>
+                <Link to="/facebook"><span> <IoLogoFacebook /></span></Link>
+                <Link to="/github"><span> <IoLogoGithub /></span></Link>
+                <Link to="/instagram"><span><RiInstagramFill /></span></Link>
+                <Link to="/twitch"><span> <RiTwitchLine /></span></Link>
               </div>
             </div>
           </div>

@@ -1,0 +1,185 @@
+.br-post {
+  border-radius: 15px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.c-header {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.br-100 {
+  border-radius: 100%;
+  width: 32px;
+  height: 32px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.not-b {
+  font-weight: lighter;
+}
+
+.c-name {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.c-name .nickname {
+  font-weight: bolder;
+}
+
+.custom-a {
+  background-color: darkblue;
+  color: #8cfff9;
+  border-radius: 5px;
+}
+
+.h-order {
+  justify-self: flex-start;
+}
+
+.comment {
+  background-color: white;
+  border: none;
+}
+
+.save {
+  background-color: #cbd8df;
+  border: none;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+
+.read {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  margin-top: 10px;
+}
+
+.post-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /*margin-left: 5px;*/
+  text-decoration: none;
+  /*padding: 5px;*/
+  color: black;
+  padding: 0px;
+}
+
+.post-list:hover {
+  color: #323ebe;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.post-card .card-img-top {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 220px;
+}
+
+.post-card .card-body .c-header .c-name p {
+  margin-bottom: 0px;
+}
+
+.post-card .card-body .card-content .card-title {
+  font-weight: 700;
+}
+
+.post-card .card-body .card-content .card-post-tags .custom-a {
+  padding: 0 8px;
+  color: #8cfff9;
+}
+
+.post-card .card-body .card-content nav Link {
+  color: #64707d;
+  font-size: 14px;
+}
+
+.post-card .card-body .card-content nav Link:hover {
+  color: #202428;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.post-card .card-body .card-content .read {
+  font-size: 14px;
+  color: #363d44;
+  font-weight: 700;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.post-card .card-body .card-content .read .d-flex {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.post-card .card-body .card-content .read .save {
+  padding: .25rem .5rem;
+  font-weight: 400;
+  color: #64707d;
+}
+
+.post-card.featured-post-card .card-content .card-title {
+  font-size: 30px;
+}
+
+.counters {
+  color: #363d44;
+  font-size: 15px;
+}
+
+.counters:hover {
+  color: #202428;
+  background-color: #f6f6fc;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .6s ease;
+  -webkit-transition: all .6s ease;
+}
+
+.tag-list {
+  color: #64707d;
+  font-size: 15px;
+}
+
+.tag-list:hover {
+  color: #202428;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.save {
+  padding: .25rem .5rem;
+  font-size: 15px;
+  font-weight: 400;
+  color: #494949;
+}
+
+.save:hover {
+  color: #202428;
+  background-color: #b3b3b3;
+  text-decoration: none;
+  cursor: pointer;
+}
+/*# sourceMappingURL=styles.css.map */
