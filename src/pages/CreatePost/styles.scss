@@ -1,0 +1,189 @@
+@import "../../assets/styles.scss";
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+
+/** ---------------------CREATE NEW POST---------------------*/
+main{
+    background-color: $light-gray;
+    .create-post-inner{
+        max-width: 1280px;
+        .header-nav-container{
+            .page-title-wrapper{
+                display: flex;
+                align-items: center;
+                p{
+                    font-weight: 400;
+                }
+            }
+            .nav-buttons-wrapper{
+                ul{
+                    li{
+                        list-style: none;
+                        transition-duration: 0.3s;
+                        &:hover{
+                            background-color: lavender;
+                            border-radius: 5px;
+                            }
+                            button{
+                                &:hover{
+                                    color: $hover-tabs-color;
+                                }
+                            }
+                    }
+                }
+            }
+        }
+        .create-post-container{
+            .main-creation-container{
+                .post-content-container{
+                    .post-content-header{
+
+                        .new-cover-img {
+                            width: 150px;
+                            height: 50px;
+                            overflow: hidden;
+                            text-align: center;
+                            background-color: white;                            
+                            padding: 0.9em;
+                            padding-left: 0%;                            
+                            border: solid 2px rgb(139, 135, 135);                            
+                            border-radius: 6px;
+                            font-family: "Montserrat", sans-serif;
+                            font-weight: bold;
+                            opacity: 3;  
+                                                        
+                            .input-file-image-name
+                            {
+                                display:none;
+                                
+                            }
+                            
+                            .label-post-cover-image
+                            {
+                                text-align:center;
+                            }
+
+                          }
+
+                        .cover-image-input-wrapper{
+                            .image-url-input{
+                                    border: none; 
+                                    font-family: monospace;
+                                }
+                            .post-title-text{
+                                    font-weight: 700; 
+                                    border: none; 
+                                    resize: none;
+                                    color:red;
+                                    font-family: 'Barlow Semi Condensed', sans-serif !important;
+                            }                                                        
+                            .tag-input-text{
+                                border: 2px red solid; 
+                                font-family: monospace
+                            } 
+                            
+                            .upload-image {
+                                width: 100%;
+                                height: 50px;
+                                overflow: hidden;
+                                text-align: center;
+                                background-color: #eef0f1;
+                                padding: 0.9em;
+                                border-color: darkgrey;
+                                border: solid 2px;
+                                border: none;
+                                font-family: "Montserrat", sans-serif;
+                                font-weight: bold;
+                                opacity: 3;
+                              }
+
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+.btn-publish-post{
+    height: 40px;
+    width: 94px;
+    white-space: nowrap;
+    font-weight: 600;
+    border: none;
+    background-color: $main-blue;
+    &:hover{
+        background-color: darken($main-blue,5%);
+    }
+}
+
+
+.btn-save-draft{
+    height: 40px;
+    width: 94px;
+    margin-left: .3rem;
+    margin-right: .3rem;
+    white-space: nowrap;
+    font-weight: 600;
+    border: none;
+    background-color: #b5bdc4;
+    opacity: 0.7;
+    &:hover{
+        opacity: 1;
+    }
+}
+
+
+
+@media(min-width: 768px){
+    
+    #title-input{
+        font-size: 2.5rem;
+    }
+    .post-content-container{
+        padding-left: 3rem;
+        padding-right: 3rem;
+        padding-top: 1rem;
+    }
+    .close-editor-wrapper{
+        position: fixed;
+        top: 13px;
+        right: 30px;
+    }
+    .aside-content-wrapper{
+        width: 250px;
+    }
+}
+
+@media(min-width: 1200px){
+    .aside-content-wrapper{
+        width: 300px;
+    }
+}
+
+
+/*
+                            <div className="post-content-container border rounded bg-white">
+                                <div className="post-content-header" >
+                                    <div className="cover-image-input-wrapper p-1">
+                                        <label for="image-url"></label>
+                                        <input className="w-100  publish-post" type="text" name="coverImage"  placeholder="Type your image URL..." id="image-url"/>
+                                    </div>
+                                    <div className="title-container p-1">
+                                        <textarea className="w-100 publish-post" type="text" name="title" style="font-weight: 700; border: none; resize: none;"  placeholder="New post title here..." id="title-input" ></textarea>
+                                    </div>
+                                    <div className="tags-container p-1">
+                                        <label for="tag-input"></label>
+                                        <input className="w-100 publish-post" type="text" name="tags" style="border: none; font-family: monospace;" id="tag-input" placeholder="Add up to 4 tags..."/>
+                                    </div>
+                                </div>
+                                <div className="post-content-body p-1">
+                                    <div className="image-button-wrapper"></div>
+                                    <div className="text-container">
+                                        <label for="content-body"></label>
+                                        <textarea className="w-100 publish-post" type="text" name="content" placeholder="Write your post content here..." style="font-family: monospace; min-height: 890px; border: none; resize: none;" id="content-body"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+*/

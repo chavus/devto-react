@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
+  useParams,
+  useLocation,
+  useHistory
 } from "react-router-dom";
 
 import './App.scss';
@@ -20,30 +23,64 @@ import PostDetail from './pages/PostDetail';
 import Search from './pages/Search';
 
 
-function App() {
+function App(props) {
+  const [userData, setUserData ] = useState(null)
+  const [isCreatePost, setIsCreatePost] = useState(false)
+  const history = useHistory()
+
+  useEffect(()=>{
+    const userDataRaw = localStorage.getItem("userData") 
+    const userData = userDataRaw ? JSON.parse(userDataRaw) : null 
+    setUserData(userData)
+},[])
+
+  function changeUserData(myUserData){
+    setUserData(myUserData)
+  }
+
+  function changeIsCreatePost(path){
+    setIsCreatePost(path)
+  }
+
   return (
     <Router>
-        <Navigation/>
-
+      { !isCreatePost &&
+        <Navigation
+          userData = { userData }
+        />
+    }
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
+        { true && 
         <Switch>
           <Route path="/createPost"> 
-            <CreatePost/>
+              <CreatePost
+                changeIsCreatePost = { changeIsCreatePost }
+              />
           </Route>
           <Route path="/login"> 
-             <Login/> 
+             <Login
+              changeUserData = {changeUserData}
+              changeIsCreatePost = { changeIsCreatePost }
+             /> 
           </Route>
           <Route path="/postDetail/:id">
-            <PostDetail/> 
+            <PostDetail
+              changeIsCreatePost = { changeIsCreatePost }
+              /> 
           </Route>
           <Route path="/search">
-            <Search/>
+            <Search
+              changeIsCreatePost = { changeIsCreatePost }
+            />
           </Route>
           <Route path="/"> 
-            <Home/>
+            <Home
+              changeIsCreatePost = { changeIsCreatePost }
+            />
           </Route>
         </Switch>
+}
     </Router>
   );
 }
