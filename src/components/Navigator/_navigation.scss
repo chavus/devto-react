@@ -23,7 +23,7 @@
 
 .burger-side-menu{
   // margin-top: 430px;
-  background-color: grey;
+  background-color: var(--main-0);
   width: 300px;
   position: absolute;
   top: 56px;
@@ -32,14 +32,37 @@
   justify-content: start;
   // position: fixed;
 
+  ul{
+    overflow-y: scroll;
+  }
+  
+  
+
   ul li{
     padding: 15 px 0 10px 0;
+    display: flex;
+    align-items: left;
+    padding: 3px 5px;
+    color: var(--main-9);
 
+    .menu-bars{
+      border-bottom: 1px solid var(--main-2);
+      padding-bottom: 12px;
+    }
+
+    span {
+      font-size: 1.25rem;
+      padding-right: 0.5rem;
+    }
     
       h5{
         background-color: grey;
       }
-    
+      &:hover {
+        background-color: var(--main-a);
+        color: var(--main-theme-darker);
+        border-radius: 5px;
+      }
   }
   
 }
@@ -86,6 +109,11 @@
 @media(min-width: 768px){
 
   .burger-menu{
+    display: none;
+
+  }
+
+  .burger-side-menu{
     display: none;
   }
 
