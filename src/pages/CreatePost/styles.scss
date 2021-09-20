@@ -3,6 +3,11 @@
 
 
 /** ---------------------CREATE NEW POST---------------------*/
+
+button{
+    max-width: 100% !important;
+}
+
 main{
     background-color: $light-gray;
     .create-post-inner{
@@ -35,16 +40,14 @@ main{
             }
         }
         .create-post-container{
-                          .main-creation-container{
+           .main-creation-container{
                 .post-content-container{
-                    height: 75vh;
-  
-                    .post-content-header{
-
+                       height: 75vh;
+                      
+                        .post-content-header{
                         .image-preview-wrapper{
                             .image-preview-container{
                                 .image-preview-div{                                 
-                                    
                                     .image-preview{
                                         object-fit: cover;
                                         border-radius: 5px ;
@@ -58,14 +61,15 @@ main{
 
                         .new-cover-img {    // BUTTON ADD POST IMAGE
                             
-                            width: 150px;
-                            height: 50px;
+                            width: auto;
+                            height: 40px;
                             overflow: hidden;
                             text-align: center;
-                            background-color: white;                            
-                            padding: 0.9em;
-                            padding-left: 0%;                            
-                            border: solid 2px rgb(139, 135, 135);                            
+                            background-color: white;                                                                                    
+                            margin-left: 10px;                            
+                            padding-left: 1rem;
+                            padding-right: 1rem;
+                            border: solid 2px #d6d6d7 ;                            
                             border-radius: 6px;
                             font-family: "Montserrat", sans-serif;
                             font-weight: bold;
@@ -80,12 +84,33 @@ main{
                             .label-post-cover-image   // LABEL BUTTON POST IMAGE
                             {
                                 text-align:center;
+                                cursor: pointer;
                             }
 
                           }
+   
+                        a:link{ // REMOVE BUTTON   
+
+                            background: #00000000;                            
+                            color: #dc1818;  
+                            border-radius: 5px; 
+                            font-size: 1rem;
+                            height: 40px;
+                            text-align: center;
+
+                        }
+                        a:hover{ // REMOVE BUTTON HOVER  
+                            background: #f5f2f2;
+                            color: #dc1818;
+                            border-radius: 5px;  
+                            font-size: 1rem;
+                            height: 40px;
+                                                           
+                        }                          
 
                         .title-container{     // POST TITLE
                             .post-title-text{
+                                
                                 font-weight: 700; 
                                 border: none;
                                 padding: 0;
@@ -93,10 +118,13 @@ main{
                                 outline: none;
                                 width: 100%;
                                 box-shadow: none;
+                                min-height: 60px;
+                                overflow: hidden;                                                              
                                 resize: none;
-                                transition: none;
-                                //min-height: 50px;
-                                //max-height: 50px;
+                                font-size: 1.875rem;
+
+
+
                             } 
                         }
 
@@ -117,26 +145,30 @@ main{
 
                         }
 
-                        .other-image-button {   // OTHER POST IMAGE
-                            width: 100%;
-                            height: 50px;
-                            overflow: hidden;
-                            text-align: center;
-                            background-color: #eef0f1;
-                            padding: 0.9em;
-                            border-color: darkgrey;
-                            border: solid 2px;
-                            border: none;
-                            font-family: "Montserrat", sans-serif;
-                            font-weight: bold;
-                            opacity: 3;
-
-                            .other-image-input{
-                                display:none;
-                            }
-                          }                       
+                  
                        
                     }
+                    .other-image-container{
+                        //   max-width: 100%;
+                       .other-image-button {   // OTHER POST IMAGE
+                           width: 100% ;                            
+                           height: 50px;
+                           overflow: hidden;
+                           text-align: left;
+                           background-color: #eef0f1;
+                           padding: 0.9em;
+                           border-color: darkgrey;
+                           border: solid 2px;
+                           border: none;
+                           font-family: "Montserrat", sans-serif;
+                           font-weight: bold;
+                           opacity: 3;                                
+
+                           .other-image-input{
+                               display:none;
+                           }
+                       }    
+                   }                     
                     .post-content-body{
                          .text-body-container{
                              .publish-post{  // POST TEXT CONTENT
@@ -147,10 +179,14 @@ main{
                                 outline: none;
                                 width: 100%;
                                 box-shadow: none;
-                                //resize: none;
+
                                 //transition: none;
                                 font-family: monospace;
                                 font-size: 1.125rem;
+
+                                overflow: hidden;                                                              
+                                resize: none;
+                                
                              }       
 
                          }   
@@ -197,7 +233,8 @@ main{
 
 @media(min-width: 768px){
     
-    #title-input{
+
+    #title{
         font-size: 2.5rem;
     }
     .post-content-container{
@@ -215,6 +252,13 @@ main{
     }
 }
 
+@media(min-width: 992px){
+    .button-tittle-wrapper
+    {
+        padding-left: 138px;
+    }
+}
+
 @media(min-width: 1200px){
     .aside-content-wrapper{
         width: 300px;
@@ -222,27 +266,3 @@ main{
 }
 
 
-/*
-                            <div className="post-content-container border rounded bg-white">
-                                <div className="post-content-header" >
-                                    <div className="cover-image-input-wrapper p-1">
-                                        <label for="image-url"></label>
-                                        <input className="w-100  publish-post" type="text" name="coverImage"  placeholder="Type your image URL..." id="image-url"/>
-                                    </div>
-                                    <div className="title-container p-1">
-                                        <textarea className="w-100 publish-post" type="text" name="title" style="font-weight: 700; border: none; resize: none;"  placeholder="New post title here..." id="title-input" ></textarea>
-                                    </div>
-                                    <div className="tags-container p-1">
-                                        <label for="tag-input"></label>
-                                        <input className="w-100 publish-post" type="text" name="tags" style="border: none; font-family: monospace;" id="tag-input" placeholder="Add up to 4 tags..."/>
-                                    </div>
-                                </div>
-                                <div className="post-content-body p-1">
-                                    <div className="image-button-wrapper"></div>
-                                    <div className="text-container">
-                                        <label for="content-body"></label>
-                                        <textarea className="w-100 publish-post" type="text" name="content" placeholder="Write your post content here..." style="font-family: monospace; min-height: 890px; border: none; resize: none;" id="content-body"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-*/

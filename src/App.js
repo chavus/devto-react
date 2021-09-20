@@ -76,7 +76,9 @@ function App(props) {
           </Route>
           <Route path="/"> 
             <Home
+             userData = { userData }
               changeIsCreatePost = { changeIsCreatePost }
+             
             />
           </Route>
         </Switch>
