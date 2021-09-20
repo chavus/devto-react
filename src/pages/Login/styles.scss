@@ -36,7 +36,7 @@
         width:100% !important;
     }
 }
-button{
+.my-buttons{
     max-width: 520px;
 }
 .text-here{
@@ -46,17 +46,19 @@ button{
     width: 100%;
     background-color: #3b49df;
 }
-
+.title-bold{
+    font-weight: bold;
+}
 @media(min-width:768px){
     .group-btns{
         #apple{
-            background-position:26% 50%
+            background-position:24% 50%
         }
         #github{
-            background-position:26% 50%;
+            background-position:24% 50%;
         }
         #twitter{
-            background-position:26% 50%;
+            background-position:24% 50%;
         }
     }
 }

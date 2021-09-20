@@ -83,8 +83,18 @@ $main-gray: #64707d;
     padding-left: 2em;
 }
 
-
-
+.emoji1::after{
+    content: "\1F389";
+}
+.emoji2::after{
+        content: "\1F195\1F41D";
+}
+.emoji3::after{
+    content: "\1F53D";
+}
+.text-bold{
+    font-weight: bold;
+}
 
 
 /* End of Aside Right */
