@@ -2,7 +2,10 @@ import appleFire from "../../img/icons/apple-fire.png"
 import changuito from "../../img/images/changuito.jpg"
 import faceSunglasses from "../../img/icons/face-sunglasses.svg"
 
-export default function RightAside(){
+export default function RightAside(props){
+
+	console.log('este es del righaside' + props.postData.writer.name)
+
     return(
         <div class=" sticky-top post-detail-profile">
 					<div class="card box post-detail-profile-info">
