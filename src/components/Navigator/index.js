@@ -20,6 +20,13 @@ function Navbar(props) {
     
     const showBurgerSideBar = () => setBurgerSideBar(!burgerSideBar)
 
+    function onSignoutClick(){
+        localStorage.removeItem("userData")
+        console.log("User logged out");
+        window.location.reload(false);
+
+    }
+
     return (
         <div>
            <header className="fixed-top">
@@ -82,7 +89,7 @@ function Navbar(props) {
                                     <Link to="/search" class="d-flex d-md-none"><img src="/images/icons/search.svg" alt="search"/></Link>
                                   
                                         <Link className="icons-links" to=""><img src="/images/icons/connect.svg" alt="connect"/></Link>
-                                        <Link className="icons-links" to=""><img src="/images/icons/notifications.svg" alt="notifications"/></Link>
+                                        <button className="icons-links" to=""><img src="/images/icons/notifications.svg" alt="notifications" onClick={ onSignoutClick }/></button>
                                   
                                    
 

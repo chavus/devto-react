@@ -19,23 +19,6 @@ $reaction-color-light-blue:#26d9ca;
         }
 
         .filters{
-            &:hover {
-                color: $main-blue;
-               background-color: #dee0f3;
-               border-radius: 5px;
-               transition: all 1s ease;
-               -webkit-transition: all 1s ease;
-            }
-        }
-        .title{
-            display:flex;
-        }
-
-    }
-    .nav.nav-tabs{
-        border-bottom: none;
-       
-        .nav-link{
             position: relative;
             border-radius: 5px;
             overflow: hidden;
@@ -71,5 +54,13 @@ $reaction-color-light-blue:#26d9ca;
             }
 
         }
+        .title{
+            display:flex;
+        }
+
     }
-}
+    .nav.nav-tabs{
+        border-bottom: none;
+       
+       
+}}

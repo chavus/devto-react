@@ -6,10 +6,23 @@ import sick from "../../img/pics/sick.jpg"
 import karen from "../../img/pics/karen.jpeg"
 import alfred from "../../img/pics/alfred.jpg"
 import michael from "../../img/pics/me and michael.jpg"
-import iconHeart from "../../img/icons/heart-icon.svg"
-import collapsedIcon from "../../img/icons/collapsed-icon.svg"
+
+import PostComment from '../postComment'
+
+import { useState } from 'react'
 
 export default function MainSection(props){
+    // const [collapsed, setCollapsed] = useState(true)
+    
+    const { collapsed,setCollapsed } = props
+
+    function listComments(){
+        return postData.comments.map(comment => { return <PostComment
+            comment = { comment }ç
+            likeComment = { props.likeComment }
+     /> })
+    }
+
     const postData = props.postData
     return(
         <>
@@ -24,12 +37,11 @@ export default function MainSection(props){
                     {
                         postData.tagsList.map(tag => <button className="btn-card-2 text" type="button">{ tag }</button>
                         )
-                        
                     }            
 
                 </div>
                 <div className="card-format pt-3 px-4">
-                    <img className="img-yash mr-2 mt-3" src= { profile1 }
+                    <img className="img-yash mr-2 mt-3" src= 'https://picsum.photos/200/300'
                         alt="yash tiwari" id="user-image"/>
                         <span id="user-name">{ postData.writer.userName }</span>
                         <span className="date-txt" id="post-date">{ postData.readablePublishedDate }</span>
@@ -70,34 +82,13 @@ export default function MainSection(props){
                 </div>
                 <div className="comment-container">
                     {/* //Comment */}
+                    { collapsed ?
+                        listComments().slice(0,2) :
+                        listComments()
+                    }
                     {
-
-                        postData.comments.map(comment => { return (
-                        <div className="comment-box pt-3 d-flex">
-                            <div className="pfp-collapse-images pr-md-0 d-flex mr-2 flex-column">
-                                <img className="rounded-circle" width="24px" height="24px" src={loggedAvatar} alt="karen"/>
-                                <img className="mt-1" width="24px" height="24px" src={ collapsedIcon } alt="collapsed"/>
-                            </div>
-                            <div className="comment-info pl-md-0">
-                                <div className="card">
-                                    <div className="card-body pt-1">
-                                        <div className="comment-person-info d-flex">
-                                            <p className="card-text"><small className="text-muted"> <b>{comment.readableUserName}</b></small></p>
-                                            <p className="card-text pl-1"><small className="text-muted"> {comment.readableCreationDate}</small></p>
-                                        </div>
-                                        <p>
-                                        {comment.content}
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="comment-interaction">
-                                    <button type="button" className="btn btn-light bg-white like-comment-btn" data-comment-id={comment._id} onClick={ props.likeComment }><img src={ iconHeart } alt="heart"  /><span className="font-weight-normal">{comment.reactionsCounter}</span> likes</button>
-                
-                                </div>
-                            </div>
-                        </div>
-                        )})
-
+                        listComments().length > 2 &&
+                        <button className="mx-4" onClick= { ()=>(setCollapsed(!collapsed)) }>{ collapsed ? "See more" : "See less"}</button>
                     }
             </div>
             <button className="save mt-3 ml-4 d-none" id="toogle-show-comments">Show all <span className="comments-qty"></span> comments</button>
