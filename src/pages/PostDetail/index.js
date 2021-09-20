@@ -19,6 +19,9 @@ function PostDetail(props){
     const [ postComments, setPostComments ] = useState([])
     const [ comment, setComment] = useState("")
     const [userData, setUserData] = useState(null)
+    const [collapsed, setCollapsed] = useState(true)
+
+
     const postId = useParams().id
     let history = useHistory()
     props.changeIsCreatePost(false)
@@ -51,15 +54,15 @@ function PostDetail(props){
         console.log("commentData")
         console.log(commentData)
         const response = await api.addComment(postId, commentData, userData.token )
-        // if (!response.success){
-        //     console.log("not logged in")
-        //     history.push("/login")
-        // }
         const postDataRes = await api.getPostById(postId)
+        console.log("postDataRes");
+        console.log(postDataRes);
         const extendedPostData = await mapCommentsUsers(postDataRes, userData.token)
+        console.log("extendedPostData")
         console.log(extendedPostData)
         setPostData(extendedPostData)
         setComment("")
+        setCollapsed(false)
     }
 
     async function likeComment(event){
@@ -122,8 +125,12 @@ function PostDetail(props){
                     comment = { comment }
                     addComment = { addComment }
                     likeComment = { likeComment }
-                    onCommentClick ={ onCommentClick }/>
-                </section>
+                    onCommentClick ={ onCommentClick }
+                    collapsed = { collapsed }
+                    setCollapsed = {setCollapsed}
+                    />
+                    
+                </section> 
                 <aside className="d-none d-lg-block d-xl-block col-lg-3 col-xl-3">
                     <RightAside
                     postData = { postData }
