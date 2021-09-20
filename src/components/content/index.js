@@ -31,7 +31,7 @@ const Content = () => {
     }, []) 
 
   const onFilterClick = (event) => {
-    console.log('filterclick')
+    
     let name = event.target.name
     setFilterName( name )
  
