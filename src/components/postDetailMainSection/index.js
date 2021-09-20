@@ -18,7 +18,8 @@ export default function MainSection(props){
 
     function listComments(){
         return postData.comments.map(comment => { return <PostComment
-            comment = { comment }
+            comment = { comment }ç
+            likeComment = { props.likeComment }
      /> })
     }
 
