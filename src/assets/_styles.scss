@@ -1009,9 +1009,16 @@ main{
     }
 }
 
+.col-aside-left{
+    display: none;
+}
 
 
 @media(min-width: 768px){
+
+    .col-aside-left{
+        display: block;
+    }
     
     #title-input{
         font-size: 2.5rem;
@@ -1030,6 +1037,8 @@ main{
         width: 250px;
     }
 }
+
+
 
 @media(min-width: 1200px){
     .aside-content-wrapper{

@@ -1,5 +1,7 @@
 @import "../../assets/variables";
 
+
+
 .card-aside{
   margin-bottom: 1rem;
   padding: 1rem;
@@ -158,4 +160,16 @@
       }
     }
   }
+  .sticker-card{
+    .ad-img-left{
+      width: 100%;
+      margin-top: 1.5rem;
+    }
+    .a-l-txt-color{
+      font-size: 1.5em;
+      font-weight: 700;
+    }
+  }
+
 }
+

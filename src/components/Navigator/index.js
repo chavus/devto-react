@@ -1,19 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {
     Link,
 } from "react-router-dom";
 import "./_navigation.scss"
-
+import OpcionesMenu from './opcionesMenu';
+import {GoThreeBars} from "react-icons/go";
+import{ GrFormClose }from "react-icons/gr";
 
 function Navbar(props) {
     // const [userData, setUserData] = useState(null)
     const userData = props.userData
     const [searchTerm, setSearchTerm] = useState("")
+    const [burgerSideBar, setBurgerSideBar] = useState(false)
 
     function onSearchChange(event){
         const value = event.target.value
         setSearchTerm(value)
     }
+    
+    const showBurgerSideBar = () => setBurgerSideBar(!burgerSideBar)
 
     return (
         <div>
@@ -21,15 +26,37 @@ function Navbar(props) {
                 <div className="container-xl custom-container">
                     <div className="row">
                         <div className="col-12">
+
                             <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                                {/* menú hamburguesa */}
+                                    
+                                <div className="burger-menu">
+                                      
+                                        <Link to="#">
+                                            <GoThreeBars className="burger-logo" onClick={showBurgerSideBar}/>
+                                        </Link>
+                                </div>
+
+                                {burgerSideBar && 
+                                <div className="burger-side-menu">
+
+                                    {/* {console.log("el siderbar" , burgerSideBar)} */}
+
+                                    <ul burger-side-items>
+                                        
+                                        <li burger-toogle>
+
+                                            <Link to="#" className="menu-bars"><span>DEV Community</span><GrFormClose /></Link>
+                                        </li>
+
+                                        <OpcionesMenu/>
+                                    </ul>
+                                    
+                                </div>
+                                }
                                 <div className="navbar-left d-flex align-items-center">
-                                    <button className="navbar-toggler d-flex d-md-none" type="button"
-                                        data-toggle="collapse" data-target="#sidebar"
-                                        aria-controls="navbarProfileInfo" aria-expanded="false"
-                                        aria-label="Toggle navigation">
-                                        <span className="navbar-toggler-icon"></span>
-                                    </button>
-                                    <Link to="index.html" class="site-logo" aria-label="DEV Community Home">
+
+                                    <Link to="/" className="site-logo" aria-label="DEV Community Home">
                                         <svg width="50" height="40" viewBox="0 0 50 40"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <rect width="50" height="40" rx="3"> </rect>
@@ -38,6 +65,7 @@ function Navbar(props) {
                                             </path>
                                         </svg>
                                     </Link>
+                                    
 
                                 </div>
                                 <form className="seach">
