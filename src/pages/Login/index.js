@@ -69,7 +69,7 @@ function Login(props){
                         </FormGroup>
                         <FormGroup>
                             <Label className="mb-2">Password</Label>
-                            <Input className="text-here" type="text" name="password" onChange={ onInputChange} />
+                            <Input className="text-here" type="password" name="password" onChange={ onInputChange} />
                         </FormGroup>
                             <div className="mt-2">
                                 <input type="checkbox"/>
