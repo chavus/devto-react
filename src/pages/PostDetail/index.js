@@ -14,13 +14,14 @@ import MainSection from "../../components/postDetailMainSection";
 
 import "./style.scss"
 
-function PostDetail(){
+function PostDetail(props){
     const [ postData, setPostData ] = useState(null)
     const [ postComments, setPostComments ] = useState([])
     const [ comment, setComment] = useState("")
     const [userData, setUserData] = useState(null)
     const postId = useParams().id
     let history = useHistory()
+    props.changeIsCreatePost(false)
 
     async function likePost(){
         if (!userData){
@@ -102,6 +103,7 @@ function PostDetail(){
     }
 
     return(
+        
 
         <main className="container-xl custom-container">
         { !postData && <Spinner type="grow" color="primary" children=""/>}
@@ -123,7 +125,9 @@ function PostDetail(){
                     onCommentClick ={ onCommentClick }/>
                 </section>
                 <aside className="d-none d-lg-block d-xl-block col-lg-3 col-xl-3">
-                    <RightAside/>
+                    <RightAside
+                    postData = { postData }
+                    />
                 </aside>
             </div>
         }

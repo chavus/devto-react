@@ -52,12 +52,12 @@ function Login(props){
         <>
             <div className="d-flex flex-column justify-content-center align-items-center supermain-container-login">
                 <div className="bg-white rounded border p-4">
-                    <h1 className="font-weight-bold text-center">Welcome to DEV Community</h1>
+                    <h3 className=" title-bold font-weight-bold text-center">Welcome to DEV Community</h3>
                     <p className="text-center"><span className="text-relevant">DEV Comunity</span> is a community of 693,496 amazing developers</p>
                         <div className="group-btns d-flex flex-column">
-                            <Button id="apple" className="mt-2" type="button" color="dark" size="lg" block>Continue whit Apple</Button>
-                            <Button id="github" className="mt-2" type="button" color="secondary" size="lg" block>Continue whit GitHub</Button>
-                            <Button id="twitter" className="mt-2" type="button"  size="lg" block>Continue with Twitter</Button>
+                            <Button id="apple" className=" my-buttons mt-2" type="button" color="dark" size="lg" block>Continue whit Apple</Button>
+                            <Button id="github" className=" my-buttons mt-2" type="button" color="secondary" size="lg" block>Continue whit GitHub</Button>
+                            <Button id="twitter" className=" my-buttons mt-2" type="button"  size="lg" block>Continue with Twitter</Button>
                         </div>
                         <div className="mt-3">
                             <p className="text-center">Have a password? Continue with your email address</p>
@@ -75,7 +75,7 @@ function Login(props){
                                 <input type="checkbox"/>
                                 <label> Remember me</label>
                             </div>
-                        <Button id= "continue"className="mt-3" type="button" size="lg" block  onClick={ onContinueClick }>Continue</Button>
+                        <Button id= "continue"className=" my-buttons mt-3" type="button" size="lg" block  onClick={ onContinueClick }>Continue</Button>
                         <p className="text-center mt-3"><span className="text-relevant">I forgot my password</span></p>
                     </Form>
                 </div>
