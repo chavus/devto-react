@@ -82,7 +82,7 @@ export default{
         let postCommentsBatch = await this.getCommentsByPostId(postId, jwtToken)
         let postCommentsIds = postCommentsBatch.map(comment => comment._id ) 
         postCommentsIds.push(commentId)
-        this.updatePost(postId, {comments:postCommentsIds}, jwtToken)
+        await this.updatePost(postId, {comments:postCommentsIds}, jwtToken)
         return postCommentsIds
     },
     async updateComment(id, data, jwtToken){
