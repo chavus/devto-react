@@ -18,7 +18,7 @@ const Home = (props)=> {
     <>
        <Container>
             <Row className="main-container d-flex">
-                <Col xs='12' md='4' xl='3' >
+                <Col xs='0' md='4' xl='3' >
                    <LeftAsideB/>
                 </Col>  
                 <Col xs='12' md='8' xl='6'>

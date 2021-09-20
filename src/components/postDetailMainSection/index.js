@@ -29,7 +29,7 @@ export default function MainSection(props){
 
                 </div>
                 <div className="card-format pt-3 px-4">
-                    <img className="img-yash mr-2 mt-3" src= { profile1 }
+                    <img className="img-yash mr-2 mt-3" src= 'https://picsum.photos/200/300'
                         alt="yash tiwari" id="user-image"/>
                         <span id="user-name">{ postData.writer.userName }</span>
                         <span className="date-txt" id="post-date">{ postData.readablePublishedDate }</span>

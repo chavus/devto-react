@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-import {
-  Button
-} from "reactstrap";
 import api from '../../lib/api'
 import Cards from '../Cards'
 import './styles.scss'
@@ -13,10 +10,6 @@ import moment from 'moment'
 
 const Content = () => {
 
-  const putYear = date => moment(date).year()
-  const putMonth = date => moment(date).month()
-  const putWeek = date => moment(date).isoWeek()
-
   const [posts, setPosts] = useState([]);
   const [filterName, setFilterName] = useState('feed')
   const [filteredPosts, setFilteredPosts] = useState(posts)
@@ -26,7 +19,9 @@ const Content = () => {
         const result = await api.getAllPosts()  
         console.log(result) 
         setPosts(result)
-        setFilteredPosts(result)
+        setFilteredPosts([...result].sort((x,y) => {
+          return moment(y.publishedTimestamp) - moment(x.publishedTimestamp)
+        }))
        
     }, []) 
 
@@ -34,19 +29,30 @@ const Content = () => {
     
     let name = event.target.name
     setFilterName( name )
- 
+    
     let filteredPostRes = filterBy(name)
+
     setFilteredPosts( filteredPostRes )
   }  
   
   const filterBy = (filterNameArg) => {
 
-      if(filterNameArg == 'feed' || filterNameArg == 'infinity' ){
-          return posts
+      if(filterNameArg == 'feed'){
+        let postCopy = [...posts]
+        postCopy.sort((x,y) => {
+          return moment(y.publishedTimestamp) - moment(x.publishedTimestamp)
+        })
+          return postCopy
+
       } else if (filterNameArg == 'week'){
         return posts.filter( post => moment(post.publishedTimestamp) >= moment().subtract(7, 'days')) 
+
       } else if (filterNameArg == 'month'){
         return posts.filter( post => moment(post.publishedTimestamp) >= moment().subtract(1, 'month'))
+
+      } else if (filterNameArg == 'infinity'){
+        return posts
+
       } else if (filterNameArg == 'latest'){
         let postCopy = [...posts]
         postCopy.sort((x,y) => {
@@ -66,24 +72,24 @@ const Content = () => {
                   <h1 className='subtitle'>Posts</h1>
               </div>
               <div>
-                  <Button color='none' className='filters' name='feed' onClick={onFilterClick}>Feed</Button>
-                  <Button color='none' className='filters' name='week' onClick={onFilterClick}>Week</Button>
-                  <Button color='none' className='filters' name='month' onClick={onFilterClick}>Month</Button>
-                  <Button color='none' className='filters' name='infinity' onClick={onFilterClick}>Infinity</Button>
-                  <Button color='none' className='filters' name='latest' onClick={onFilterClick}>Latest</Button>
+                  <button color='none' className={ `filters ${ filterName == "feed" && "active" }` }  name='feed'  onClick={onFilterClick}>
+                    Feed
+                  </button>
+                  <button color='none' className={ `filters ${ filterName == "week" && "active" }` } name='week' onClick={onFilterClick}>
+                    Week
+                  </button>
+                  <button color='none' className={ `filters ${ filterName == "month" && "active" }` } name='month' onClick={onFilterClick}>
+                    Month
+                  </button>
+                  <button color='none' className={ `filters ${ filterName == "infinity" && "active" }` } name='infinity' onClick={onFilterClick}>
+                    Infinity
+                  </button>
+                  <button color='none' className={ `filters ${ filterName == "latest" && "active" }` }name='latest' onClick={onFilterClick}>
+                    Latest
+                  </button>
               </div>
           </nav>
-          { /*<select id="dropdown-select" className="dropdown">
-              <option value="Feed" defaultValue>
-                Feed
-              </option>
-
-              <option value="Week">Week</option>
-              <option value="Month">Month</option>
-              <option value="Year">Feed</option>
-              <option value="Infinity">Infinity</option>
-          </select> */}
-    
+         
       <div className="articles">
 
           { filteredPosts.map((post, index) => {
