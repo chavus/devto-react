@@ -24,19 +24,19 @@ function Navbar() {
 							</a>
 
 						</div>
-						<!--aqui esta el input de busqueda-->
+						
 						<form class="seach">
 							<input id="search" class="form-control " type="search" placeholder="Search..."
-								aria-label="Search...">
+								aria-label="Search..."/>
 						</form>
 						<div class="navbar-right d-flex  align-items-center">
 							<button onclick="window.location.href='New.html';" class="btn btn-primary btn-create-post d-none d-md-flex text-center"> Create Post
 							</button>
 							<a href="vistaBusqueda.html" class="d-flex d-md-none"><img src="img/icons/search.svg"
-									alt="seach"></a>
-							<a href=""><img src="img/icons/moderation.svg" alt="moderation"></a>
-							<a href=""><img src="img/icons/connect.svg" alt="connect"></a>
-							<a href=""><img src="img/icons/notifications.svg" alt="notifications"></a>
+									alt="seach"/></a>
+							<a href=""><img src="img/icons/moderation.svg" alt="moderation"/></a>
+							<a href=""><img src="img/icons/connect.svg" alt="connect"/></a>
+							<a href=""><img src="img/icons/notifications.svg" alt="notifications"/></a>
 
 							<div class="nav-item dropdown">
 
@@ -48,7 +48,7 @@ function Navbar() {
 									<span class="circle-badge">
 										<img class="crayons-avatar__image" alt="profile image"
 											id="nav-profile-image"
-											src="https://res.cloudinary.com/practicaldev/image/fetch/s--IjCb_ILa--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/647885/81bdd7eb-d4eb-4f9e-94a3-0ce06183465b.png">
+											src="https://picsum.photos/200"/>
 									</span>
 								</button>
 								<ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
@@ -67,7 +67,7 @@ function Navbar() {
 									<li><a class="dropdown-item" href="#">Reading List </a></li>
 									<li><a class="dropdown-item" href="#">Settings</a></li>
 									<li>
-										<hr class="dropdown-divider">
+										<hr class="dropdown-divider"/>
 									</li>
 									<li><a class="dropdown-item" href="#">Sign Out</a></li>
 								</ul>
