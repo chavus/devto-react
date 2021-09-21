@@ -68,7 +68,7 @@ const Content = () => {
     <section className = "cards-section">
      
           <nav className = 'cards-navigation'> 
-              <div>
+              <div className='d-none d-sm-block'>
                   <h1 className='subtitle'>Posts</h1>
               </div>
               <div>
