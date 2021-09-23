@@ -55,8 +55,8 @@ function Login(props){
                     <h3 className=" title-bold font-weight-bold text-center">Welcome to DEV Community</h3>
                     <p className="text-center"><span className="text-relevant">DEV Comunity</span> is a community of 693,496 amazing developers</p>
                         <div className="group-btns d-flex flex-column">
-                            <Button id="apple" className=" my-buttons mt-2" type="button" color="dark" size="lg" block>Continue whit Apple</Button>
-                            <Button id="github" className=" my-buttons mt-2" type="button" color="secondary" size="lg" block>Continue whit GitHub</Button>
+                            <Button id="apple" className=" my-buttons mt-2" type="button" color="dark" size="lg" block>Continue with Apple</Button>
+                            <Button id="github" className=" my-buttons mt-2" type="button" color="secondary" size="lg" block>Continue with GitHub</Button>
                             <Button id="twitter" className=" my-buttons mt-2" type="button"  size="lg" block>Continue with Twitter</Button>
                         </div>
                         <div className="mt-3">
